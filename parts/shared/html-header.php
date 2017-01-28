@@ -21,7 +21,6 @@
 				<div class="u-cell">
 					<div class="c-loader__wrap">
 						<span class="c-loader__line"></span>
-						<span class="c-loader__line"></span>
 					</div>
 				</div>
 			</div>

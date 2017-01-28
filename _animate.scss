@@ -14,6 +14,12 @@ $animation__delayOffset: 0.2s !default;
 	-webkit-animation-delay:$delay;
 }
 
+@mixin duration($sec){
+  $dur: $sec * 1s;
+  -webkit-animation-duration: $dur;
+  animation-duration: $dur;
+}
+
 @mixin anim(){
   -webkit-animation-duration: 1s;
   animation-duration: 1s;

@@ -337,7 +337,7 @@ a{color:inherit}
 		&.s--project{margin-left:0; width: auto}
 	}
 }
-.o-content__header{width:percentage(2/3); position: relative;
+.o-content__header{width:percentage(2/3); position: relative; padding-bottom: 2em;
 	h1{color: $blue}
 	p{@extend .u-copy}
 	.s--project &{width: 50%; float: left}
@@ -396,7 +396,7 @@ a{color:inherit}
 	@include device(xs){display:none}
 }
 .o-circle{border:solid 1px #2B4386; width:3.75em; height:3.75em; border-radius:3.75em; display: inline-block}
-.o-articles{margin-top:4em;
+.o-articles{padding-top:2em;
 	.u-yang &{margin-top: 0}
 	&.s--tint{padding-top:1.2em; position: relative;
 		&:after{content:""; position: absolute; width: 100%; height: 100%; top:0; left:0; z-index:-1; background-color:#d7e0fd; transform-origin:0% 50%; 
@@ -540,7 +540,7 @@ a{color:inherit}
 		&.s--reset{padding:0;}
 	}
 	.boot &{@include anim; @include fadeIn; @include delay(1.5)}
-	h1{color: $blue; padding-left:0.625em;}
+	h1{color: $blue; padding-left:0.3em;}
 	h2{font-size:1.3em; padding:2em 0.625em; color: $blue}
 	h3{font-size:0.875em; padding:2em 0.625em 1em; color: $blue}
 	li{color: $grey-copy; padding-bottom: 0.625em}
@@ -749,20 +749,15 @@ a{color:inherit}
 	.u-cell{vertical-align:middle}
 	&.is-visible{display:block}
 }
-.c-loader__wrap{margin:0 auto; width: 15em; height: 5em; position: relative; transition:transform 0.7s cubic-bezier(0, 0.89, 0.25, 1); transform:scale3d(0,1,1);
+.c-loader__wrap{margin:0 auto; width: 15em; height: 5em; position: relative; transition:transform 0.7s cubic-bezier(0, 0.89, 0.25, 1); transform-origin:100% 50%;
 	&:after{background-color: $blue; content:""; position: absolute; width: 100%; height: 100%; top:0; left: 0; transform-origin:0% 0%; transform:scale3d(0,1,1)}
-	.is-visible &{transform:scale3d(1,1,1); transform-origin:100% 50%;
-		&:after{@include scaleInLeft; @include anim}
+	.is-visible &{
+		&:after{@include scaleInLeft; @include animFast;}
 	}
 	.is-animating-out &{transform:scale3d(0,1,1)}
 }
-.c-loader__line{height: 1px; width: 75%; display: block; position:absolute; left:12%; z-index:1; top:50%; transform:scale3d(0,1,1);
-	&:first-child{background-color:white; transform-origin:0% 50%;}
-	&:last-child{background-color:rgba(255,255,255,0.5); transform-origin:100% 50%}
-	.is-visible &{
-		&:first-child{@include loaderLineLeft; @include infinite}
-		&:last-child{@include loaderLineLeft; @include infinite}
-	}
+.c-loader__line{height: 1px; width: 75%; display: block; position:absolute; left:12%; z-index:1; top:50%; transform:scale3d(1,1,1); background-color:white; transform-origin:0% 50%;
+	.is-visible &{@include scaleInLeft; @include duration(1);}
 }
 .c-standfirst{
 	.o-list{padding:2em;
