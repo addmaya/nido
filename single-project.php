@@ -1,4 +1,14 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+<div class="c-pop">
+	<div class="u-table">
+		<div class="u-cell">
+			<div class="c-pop__box">
+				<a href="#" class="c-pop__close"></a>
+				<div class="u-canvas"></div>
+			</div>
+		</div>
+	</div>
+</div>
 <span class="c-pg-title">project</span>
 <div class="c-tint"></div>
 <div class="o-container">
@@ -19,7 +29,13 @@
 				</section>
 			</header>
 			<section class="c-hero__wrap">
-				<figure class="c-hero js-lazy u-bkg-img" data-thumb="<?php echo get_post_thumb(); ?>"></figure>
+				<figure class="c-hero js-lazy" data-thumb="<?php echo get_post_thumb(); ?>">
+					<div class="u-table">
+						<div class="u-cell">
+							<a href="#" class="o-button--video"></a>
+						</div>
+					</div>
+				</figure>
 			</section>
 		</div>
 		<section class="o-content__section" id="sect-1">
@@ -60,7 +76,9 @@
 				<div class="u-col">
 					<?php $neigh_facil_images = get_field('mhe_facilities_images'); ?>
 					<?php foreach ($neigh_facil_images as $neigh_facil_image): ?>
-						<figure class="u-bkg-img u-left u-square js-lazy" data-thumb="<?php echo $neigh_facil_image['mhe_facilities_image']; ?>"></figure>
+						<figure class="u-bkg-img u-left u-square js-lazy" data-thumb="<?php echo $neigh_facil_image['mhe_facilities_image']; ?>">
+							
+						</figure>
 					<?php endforeach ?>
 				</div>
 			</div>

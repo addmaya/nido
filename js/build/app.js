@@ -350,6 +350,34 @@ jQuery(document).ready(function($) {
 	scrollToHash();
 	resetImageWrap();
 
+	$('.o-button--video').click(function(e){
+		e.preventDefault();
+		$('body').addClass('u-oh');
+		$('.c-pop').show();
+	    $('.c-pop__box .u-canvas').html('<iframe id=ytplayer type=text/html src=https://www.youtube.com/embed/aixSUf0c7Cc?autoplay=1></iframe>');
+	    return false;
+	});
+
+	$('.c-pop__close').click(function(e) {
+		e.preventDefault();
+		closePop();
+	});
+
+	function closePop(){
+		$('body').removeClass('u-oh');
+		$('.c-pop__box .u-canvas').html('');
+		$('.c-pop').hide();
+	}
+
+	$('.c-pop').click(function() {
+		closePop();
+	});
+
+	$('.c-pop .c-pop__box').click(function(e) {
+		e.stopPropagation();
+	});
+
+
 	$('.js-top').click(function() {
 		$("html, body").animate({ scrollTop: 0 }, "slow");
 	});
