@@ -1,0 +1,1 @@
+<?php Starkers_Utilities::get_template_parts( array( 'single-staff' ) ); ?>
