@@ -529,8 +529,8 @@ a{color:inherit}
 		.o-pager{display:none}
 	}
 }
-.c-brief{padding-top:3em;
-	h2{font-size:1.3em; padding:2em 0; color: $blue}
+.c-brief{padding-bottom:2.5em;
+	h2{font-size:1.3em; padding:2em 0 1em; color: $blue}
 	p{@extend .u-copy; background-color: #f4f4ff}
 	.boot &{@include anim; @include fadeInUp; @include delay(1.1)}
 }
@@ -540,7 +540,7 @@ a{color:inherit}
 		&.s--reset{padding:0;}
 	}
 	.boot &{@include anim; @include fadeIn; @include delay(1.5)}
-	h2{font-size:1.3em; padding:2em 0 0.875em; color: $blue}
+	h2{font-size:1.3em; padding:2em 0.625em; color: $blue}
 	h3{font-size:0.875em; padding:2em 0.625em 1em; color: $blue}
 	li{color: $grey-copy; padding-bottom: 0.625em}
 	ul,ol{padding: 2em; line-height:2; font-size:0.875em}
