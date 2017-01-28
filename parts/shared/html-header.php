@@ -12,7 +12,6 @@
 		<meta charset="<?php bloginfo('charset');?>" />
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script data-pace-options='{"ajax":false,"restartOnPushState":false}' src="<?php echo get_stylesheet_directory_uri(); ?>/js/jquery/pace.min.js"></script>
 		<?php wp_head(); ?>		
 	</head>
 	<body class="boot <?php if(is_front_page()){echo 't-dark';}?>">
