@@ -540,6 +540,7 @@ a{color:inherit}
 		&.s--reset{padding:0;}
 	}
 	.boot &{@include anim; @include fadeIn; @include delay(1.5)}
+	h1{color: $blue; padding-left:0.625em;}
 	h2{font-size:1.3em; padding:2em 0.625em; color: $blue}
 	h3{font-size:0.875em; padding:2em 0.625em 1em; color: $blue}
 	li{color: $grey-copy; padding-bottom: 0.625em}
@@ -768,7 +769,7 @@ a{color:inherit}
 		li{padding-bottom:0.2em}
 	}
 	.o-line{background-color:#d2d2d2}
-	p{color:#565f79; font-weight:300; font-size:1.2em; padding: 2em 0.625em 0; font-family: 'Georgia', serif; line-height: 1.7}
+	p{color:#565f79; font-weight:300; padding: 2em 0.625em 0; font-family: 'Georgia', serif; line-height: 1.7}
 	.boot &{@include anim; @include fadeInUp; @include delay(1.2)}
 }
 .c-contact{position: relative;
