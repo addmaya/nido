@@ -187,6 +187,7 @@ a{color:inherit}
 	.boot &{
 		.u-wrap{@include anim; @include fadeInLeft; @include delay(0.4)}
 	}
+	@include device(xs){transition: opacity 0.3s ease}
 }
 .o-social__fb{
 	span{@include image('fb-white.svg');
@@ -501,6 +502,8 @@ a{color:inherit}
 	}
 	@include device(xs){width:50%}
 }
+.js-top{position: fixed; bottom:0; margin:2em; color: $blue; text-transform: uppercase; font-size: 0.75em; font-family: $roboto; left:0; font-weight: 700;
+}
 #barba-wrapper, .barba-container{width: 100%; height: 100%}
 
 /*components*/
@@ -536,6 +539,9 @@ a{color:inherit}
 	h2{font-size:1.3em; padding:2em 0 1em; color: $blue}
 	p{@extend .u-copy; background-color: #f4f4ff}
 	.boot &{@include anim; @include fadeInUp; @include delay(1.1)}
+	@include device(xs){
+		p{background-color:transparent;}
+	}
 }
 .c-story{
 	p{@extend .u-copy; color:$grey-copy; margin-bottom: 1.5em; padding: 0 0.625em;
@@ -590,7 +596,7 @@ a{color:inherit}
 		a{color:white}
 		.o-line{background-color:white}
 	}
-	@include device(xs){position: static; margin-bottom: 1.5em}
+	@include device(xs){position: static; margin-bottom: 1.5em; transition:opacity 0.3s ease;}
 }
 .c-hotspots{position: absolute; width: 100%; top:40%; z-index: 5;
 	.o-index{transform:scale(1,1); opacity: 0.7}
@@ -607,7 +613,7 @@ a{color:inherit}
 	.boot &{@include anim; @include fadeIn}
 }
 .o-line--hotspot{bottom: 13px; position: absolute; height: 1px; background-color: white; width: 100%; left: 20px; transform-origin:100% 50%; transform:scale(0,1); transition: transform 0.5s cubic-bezier(0, 0.55, 0.27, 0.99);
-	&.is-animating{transition-delay:0.5s; /*transition-duration:14s; */ transition-duration:7s; transform:scale(1,1); transition-timing-function: linear;transform-origin:0% 50%}
+	&.is-animating{transition-delay:0.5s; transition-duration:7s; transform:scale(1,1); transition-timing-function: linear; transform-origin:0% 50%}
 }
 .c-hotspots__item__content{display:none; height: 100%; width:200%; margin-left: 80%; background-color:purple; position: relative; z-index:4; background-size: cover; background-position:center; color: $blue;
 	.u-table{height: 100%; background-color: rgba(255, 255, 255, 0.8)}
@@ -660,8 +666,8 @@ a{color:inherit}
 		&.s--static{position: static}
 	}
 }
-.c-menu__toggle{border:solid 1px $blue; height: 2.2em; width: 2.2em; position: relative;border-radius:3em; position: absolute; top:1em; right: 0.625em; display:none;
-	span{display: block; background-color:$blue; height:1px; width:1em; position: absolute; top:13px; left: 9px; transition: transform 0.3s ease;
+.c-menu__toggle{border:solid 2px $blue; height: 2.2em; width: 2.2em; position: relative;border-radius:3em; position: absolute; top:1em; right: 0.625em; display:none;
+	span{display: block; background-color:$blue; height:2px; width:1em; position: absolute; top:13px; left: 9px; transition: transform 0.3s ease;
 		&:last-child{top: 21px}
 	}
 	&.is-open{
@@ -699,6 +705,10 @@ a{color:inherit}
 	}
 	@include device(xs){display:inline-block; margin-right: 1em; position: relative;
 		&:after{content:"-"; padding-left:0.625em; position: absolute; top:4px; right:-12px}
+		&.is-active{
+			.c-menu__item__title{transform:translateX(0); color: #f5e99f}
+			a:after{transform:scale(0,1)}
+		}
 	}
 	
 }
@@ -709,6 +719,7 @@ a{color:inherit}
 		}
 		&.is-open{height:100%; 
 			&:after{transform:scale3d(1,1,1)}
+			.o-social, .c-menu, .o-contacts{opacity: 1}
 		}
 		.o-social{position: static; margin-bottom: 1.5em}
 		.o-line{display:none}
@@ -722,6 +733,7 @@ a{color:inherit}
 	.o-tint--blue{width: 100%; height:100%}
 	.o-button{padding:1.5em 0; margin-top: 3em}
 	.swiper-slide-active{
+		h3{@include anim; @include fadeInLeft; @include delay(0.2)}
 		h2{@include anim; @include fadeInLeft; @include delay(1)}
 		.o-button{@include anim; @include fadeInLeft; @include delay(1.5)}
 	}
@@ -729,10 +741,19 @@ a{color:inherit}
 		&:hover{opacity:0.7}
 	}
 	.swiper-wrapper{transition-timing-function: cubic-bezier(0.63, -0.01, 0.15, 1)}
+	.swiper-button-prev, .swiper-button-next{background-size: contain; background-repeat:no-repeat; width: 2.5em; height: 2.5em; bottom:5%; display: none; top: auto;
+		.boot &{@include anim; @include fadeIn; @include delay(0.5)}
+		@include device(xs){display: block}
+	}
+	.swiper-button-prev{@include image('btn-back.svg')}
+	.swiper-button-next{@include image('btn-next.svg')}
 	.boot &{@include anim; @include zoomIn;}
 }
 .c-slide__copy{position:absolute; bottom:5%; width:percentage(3/6); color: white; left:percentage(2/6); overflow: hidden; padding-bottom:0.5em;z-index:2;
-	@include device(xs){left:0; width: auto}
+	h3{display: none; font-size: 0.75em; padding-bottom: 1.5em}
+	@include device(xs){left:0; width: auto; bottom:auto; top: 30%;
+		h3{display: block; padding-bottom: 1.5em}
+	}
 }
 .c-slide__image{width: 100%; height: 100%; background-size:cover; background-position:center; background-repeat:no-repeat; will-change: transform;}
 .c-slide__tint{width: 100%; height: 100%; position: relative; background-color:rgba(43, 67, 134, 0.8);

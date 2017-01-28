@@ -8,7 +8,7 @@
 		<title><?php bloginfo('name'); ?><?php wp_title('-');?></title>
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto:100,400,700" rel="stylesheet">
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri();?>/favicon.ico"/>
-		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css?v0.15">
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css?v0.152">
 		<meta charset="<?php bloginfo('charset');?>" />
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">

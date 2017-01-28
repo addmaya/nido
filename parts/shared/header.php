@@ -15,6 +15,7 @@
 			<a href="https://www.linkedin.com/company/addmaya" target="_blank" class="o-social__ldn"><span></span></a>
 		</div>
 	</div>
+	<a href="#" class="js-top">Back to Top</a>
 	<nav class="c-menu">
 		<div class="u-wrap">
 			<a href="#" class="c-menu--toggle">
@@ -95,6 +96,7 @@
 <div id="barba-wrapper">
 	<div class="barba-container" data-namespace="<?php
 		if (is_page('contact')){echo 'contact';}
+		if (is_singular('project')){echo 'project';}
 		if (is_front_page()){echo 'home';}
 		if (is_post_type_archive('insights')  || is_post_type_archive('case_studies') || is_post_type_archive('reports') || is_post_type_archive('news') || is_page('advisory') || is_page('data') || is_category()){echo 'posts';}
 	?>">

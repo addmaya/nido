@@ -106,9 +106,11 @@ jQuery(document).ready(function($) {
 	function showSideMenu() {
 	    if ($(window).scrollTop() > 200){
 	    	$('.c-menu').addClass('s--static');
+	    	$('.js-top').show();
 	    }
 	    else {
 	    	$('.c-menu').removeClass('s--static');
+	    	$('.js-top').hide();
 	    }
 	}
 	$(window).scroll(function () {
@@ -126,6 +128,10 @@ jQuery(document).ready(function($) {
 				$('.c-menu').find('.is-active').removeClass('is-active');
 				d.addClass('is-active');
 			}
+			if(t == 'project'){
+				alert('year');
+				$('.c-line-2').hide();
+			}
 		}
 	});
 
@@ -139,6 +145,17 @@ jQuery(document).ready(function($) {
 	posts.init();
 
 	//home
+	var project = Barba.BaseView.extend({
+	  namespace: 'project',
+	  onEnter: function() {
+	  	$('.c-line-2, .c-line-4').hide();
+	  },
+	  onLeave: function(){
+	  	$('.c-line-2, .c-line-4').show();
+	  }
+	});
+	project.init();
+
 	var home = Barba.BaseView.extend({
 	  namespace: 'home',
 	  onEnter: function() {
@@ -146,7 +163,9 @@ jQuery(document).ready(function($) {
 	    var splashSwiper = new Swiper('.c-slider__wrap', {
 	    	loop: true,
 	    	speed: 1200,
-	    	//autoplay:1500,
+	    	pagination: '.swiper-pagination',
+	    	nextButton: '.swiper-button-next',
+	    	prevButton: '.swiper-button-prev',
 	    	autoplay: 8000,
 	    	autoplayDisableOnInteraction:false,
 	    	onTransitionStart: function(){
@@ -330,6 +349,10 @@ jQuery(document).ready(function($) {
 	loadLazyImages();
 	scrollToHash();
 	resetImageWrap();
+
+	$('.js-top').click(function() {
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+	});
 
 	function resetImageWrap(){
 		$('.alignnone').closest('p').addClass('s--reset');
