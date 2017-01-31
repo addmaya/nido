@@ -10,9 +10,9 @@
 	<div class="o-social">
 		<div class="u-wrap">
 			<span class="o-line"></span>
-			<a href="https://facebook.com/addmaya" target="_blank" class="o-social__fb"><span></span></a>
-			<a href="https://twitter.com/addmaya" target="_blank" class="o-social__tw"><span></span></a>
-			<a href="https://www.linkedin.com/company/addmaya" target="_blank" class="o-social__ldn"><span></span></a>
+			<!-- <a href="https://facebook.com/addmaya" target="_blank" class="o-social__fb"><span></span></a> -->
+			<a href="https://twitter.com/asigmacapital" target="_blank" class="o-social__tw"><span></span></a>
+			<a href="https://www.linkedin.com/company/asigma-capital" target="_blank" class="o-social__ldn"><span></span></a>
 		</div>
 	</div>
 	<a href="#" class="js-top">Back to Top</a>
