@@ -331,7 +331,7 @@ a{color:inherit}
 		&.s--svs{height:12em}
 	}
 }
-.o-content{margin-left: percentage(2/6); width: percentage(3/6); padding-top: 18%; position: relative; z-index:12;
+.o-content{margin-left: percentage(2/6); width: percentage(3/6); padding-top: 15em; position: relative; z-index:12;
 	&.s--project{margin-left:percentage(1/6); width: percentage(4/6)}
 	.o-menu{margin:2em 0}
 	&.s--story{background-color: #fff}
@@ -456,12 +456,14 @@ a{color:inherit}
 .o-meta__item{display: inline-block; margin-right:0.75em; margin-bottom: 0.625em; position: relative;
 	&:after{content:"/"; padding-left:0.75em}
 }
-.o-service__thumb{height:16em; background-color:#383838; margin-bottom: 3em; position: relative; margin-right:0.625em; background-size:cover;
+.o-service__thumb{height:16em; background-color:#383838; margin-bottom: 3em; position: relative; background-size:cover; float: left; width:percentage(1/3);
 	span{display: inline-block; position: absolute; bottom:-10%; color: #fff; background-color: $blue; padding:1.5em 1em; font-family: $playfair; font-size:1.2em}
-	@include device(xs){margin-right:0}
+	@include device(xs){margin-right:0; width: auto; float:none;}
 }
-.o-service__desc{margin-bottom: 1em;
-	.o-line{margin-top:2em}
+.o-service__desc{margin-bottom: 1em; width:percentage(2/3); float: right;
+	.o-line{margin-top:2em; background-color:#b7b7d7}
+	p{background-color: #f4f4ff;}
+	@include device(xs){width:auto; float:none; background-color: transparent}
 }
 .o-subtitle{font-family: $roboto; color: $grey-copy; text-transform: uppercase; font-size: 0.7em; display: block;
 	.t-dark &{color: white}
@@ -546,7 +548,9 @@ a{color:inherit}
 }
 .c-story{color: #575b64;
 	p{margin-bottom: 2.5em; padding: 0 0.625em; font-size:0.95em; line-height:1.85;
-		a{color:#4463b7}
+		a{color:#4463b7; 
+			&:hover{text-transform:underline;}
+		}
 		&.s--reset{padding:0; margin: 0}
 	}
 	.boot &{@include anim; @include fadeIn; @include delay(1.5)}
@@ -621,8 +625,8 @@ a{color:inherit}
 	.u-table{height: 100%; background-color: rgba(255, 255, 255, 0.8)}
 	.u-cell{vertical-align: middle}
 }
-.c-services{margin-top:3em; @extend .u-clear;
-	li{float: left; width:percentage(1/2); margin-bottom: 1.8em; overflow: hidden;
+.c-services{margin:2em 0; @extend .u-clear;
+	li{margin-bottom: 2em; overflow: hidden;
 		&:last-child{margin-bottom:0}
 		@for $i from 1 through 3 {
 			&:nth-child(#{$i}){

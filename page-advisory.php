@@ -27,7 +27,32 @@
 		</a>
 	</div>
 	<?php endwhile; ?>
-
+	<?php $services = get_field('service'); if($services): ?>
+		<ul class="c-services">
+			<?php foreach ($services as $service): 
+				$service_title = $service['title'];
+				$service_thumb = $service['image'];
+				$service_desc = $service['description'];
+				$service_link = $service['page'];
+			?>
+				<li>
+					<article class="o-service">
+						<figure class="o-service__thumb js-lazy" data-thumb="<?php echo $service_thumb;?>">
+							<span>
+								<?php echo $service_title; ?>
+							</span>
+						</figure>
+						<section class="o-service__desc">
+							<div class="u-wrap">
+								<p><?php echo $service_desc; ?></p>
+								<span class="o-line"></span>
+							</div>
+						</section>
+					</article>	
+				</li>
+			<?php endforeach ?>
+		</ul>
+	<?php endif ?>
 	<?php
 		$posts_cat = 2;
 		$posts_type = 'case_studies';

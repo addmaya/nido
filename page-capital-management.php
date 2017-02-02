@@ -34,7 +34,7 @@
 		</a>
 	</div>
 	<?php endwhile; ?>
-	<?php $services = get_field('service', 12); if($services): ?>
+	<?php $services = get_field('service'); if($services): ?>
 		<ul class="c-services">
 			<?php foreach ($services as $service): 
 				$service_title = $service['title'];
@@ -49,9 +49,11 @@
 								<?php echo $service_title; ?>
 							</span>
 						</figure>
-						<section class="o-service__desc u-wrap">
-							<p><?php echo $service_desc; ?></p>
-							<span class="o-line"></span>
+						<section class="o-service__desc">
+							<div class="u-wrap">
+								<p><?php echo $service_desc; ?></p>
+								<span class="o-line"></span>
+							</div>
 						</section>
 					</article>	
 				</li>
