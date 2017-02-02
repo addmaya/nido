@@ -138,6 +138,7 @@ $sharpIn: cubic-bezier(0.03, 0.45, 0.25, 1);
 	&.s--two-col{
 		li{width:50%;}
 	}
+	@include device(xs){padding-bottom:0}
 }
 .u-th{background-color:$blue; color:#fff}
 
@@ -147,7 +148,9 @@ body{font-family: $roboto; background-color: #FFF; @include prefix((transition: 
 	&.t-dark{background-color:#fff;}
 	&.u-oh{overflow: hidden}
 }
-h1{font-size: 2em; font-family: $playfair; line-height:1.5}
+h1{font-size: 2em; font-family: $playfair; line-height:1.5;
+	@include device(xs){font-size:1.8em}
+}
 h2{font-size: 1.75em; font-family: $playfair; line-height:1.5;
 	@include device(xs){font-size:1.2em}
 }
@@ -367,6 +370,7 @@ a{color:inherit}
 	}
 	h5{color: $blue}
 	.boot &{@include anim; @include delay(0.5); @include fadeInUp}
+	@include device(xs){padding-bottom:0}
 }
 .o-content__header__brief{padding-top:3em;
 	p{margin-bottom:1.5em}
@@ -477,7 +481,9 @@ a{color:inherit}
 .o-service__desc{margin-bottom: 1em; width:percentage(2/3); float: right;
 	.o-line{margin-top:2em; background-color:#b7b7d7}
 	p{background-color: #f4f4ff;}
-	@include device(xs){width:auto; float:none; background-color: transparent}
+	@include device(xs){width:auto; float:none;
+		p{background-color: transparent}
+	}
 }
 .o-subtitle{font-family: $roboto; color: $grey-copy; text-transform: uppercase; font-size: 0.7em; display: block;
 	.t-dark &{color: white}
@@ -547,6 +553,7 @@ a{color:inherit}
 /*components*/
 #barba-wrapper, .barba-container{width: 100%; height: 100%}
 .js-top{position: fixed; bottom:0; margin:2em; color: $blue; text-transform: uppercase; font-size: 0.75em; font-family: $roboto; left:0; font-weight: 700;
+	@include device(xs){display: none; opacity:0}
 }
 @for $i from 0 through 5 {
 	.u-col-#{$i}{left: percentage($i/6);
@@ -839,15 +846,19 @@ a{color:inherit}
 	.u-canvas{width: 100%; height: 100%;}
 	iframe{width: 100%; height: 100%; top:0; left: 0;}
 }
-.c-pop__box{background-color: #fff; width: 960px; height: 540px; margin: 0 auto; position: relative; text-align: center}
+.c-pop__box{background-color: #fff; width: 960px; height: 540px; margin: 0 auto; position: relative; text-align: center;
+	@include device(xs){width:auto}
+}
 .c-pop__close{width: 2em;height: 2em; background-position:center; background-repeat: no-repeat;; background-size: contain; @include image('btn-close.svg'); display: inline-block; position: absolute; top: -36px; right: 0; transition:opacity 0.3s ease;
 	&:hover{opacity:0.6;}
 }
 
-.c-map{background-color: $blue; margin-top: 2em; height: 540px; position: relative}
+.c-map{background-color: $blue; margin-top: 2em; height: 540px; position: relative;
+	@include device(xs){height:auto}
+}
 .c-map__geo{background-color:#f5f5f5; width: percentage(3/4); float: left; height: 100%;
 	#map-data{opacity: 0}
-	@include device(xs){width: auto; float:none;}
+	@include device(xs){width: auto; float:none; height:200px}
 }
 .c-map__meta{background-color: $blue; width:percentage(1/4); float: left; height:100%; color: #fff; overflow: scroll;
 	.o-line{background-color: #fff; margin: 2em 0; opacity: 0.15}
@@ -856,7 +867,7 @@ a{color:inherit}
 		a{display: block;}
 	}
 	.o-button{padding-left: 0; margin-top: 1em}
-	@include device(xs){width: auto; float:none; overflow: visible}
+	@include device(xs){width: auto; float:none; overflow: visible; height:auto;}
 }
 .c-plots__list{
 	li{padding-bottom: 0.25em}

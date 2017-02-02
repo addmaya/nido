@@ -14,9 +14,6 @@
 			<h1><?php the_title(); ?></h1>
 		</section>
 	</header>
-	<section class="c-brief">
-		<div class="u-wrap"><?php the_content(); ?></div>
-	</section>
 	<div class="o-pager o-pager--services">
 		<a data-target="capital-management" href="<?php echo home_url(); ?>/capital-management" class="o-pager--next last">
 			<span class="o-circle"></span>

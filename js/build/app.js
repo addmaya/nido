@@ -99,7 +99,6 @@ jQuery(document).ready(function($) {
 		$('.c-menu__toggle').removeClass('is-open');
 	});
 	$('.js-show-contact').click(function() {
-
 		$('.o-contacts').addClass('u-white');
 	});
 
@@ -297,7 +296,6 @@ jQuery(document).ready(function($) {
 	$('.c-pop .c-pop__box').click(function(e) {
 		e.stopPropagation();
 	});
-
 
 	$('.js-top').click(function() {
 		$("html, body").animate({ scrollTop: 0 }, "slow");
