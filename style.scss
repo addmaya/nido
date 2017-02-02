@@ -544,17 +544,17 @@ a{color:inherit}
 		p{background-color:transparent;}
 	}
 }
-.c-story{
-	p{@extend .u-copy; color:$grey-copy; margin-bottom: 1.5em; padding: 0 0.625em;
+.c-story{color: #575b64;
+	p{margin-bottom: 2.5em; padding: 0 0.625em; font-size:0.95em; line-height:1.85;
 		a{color:#4463b7}
-		&.s--reset{padding:0;}
+		&.s--reset{padding:0; margin: 0}
 	}
 	.boot &{@include anim; @include fadeIn; @include delay(1.5)}
-	h1{color: $blue; padding-left:0.3em;}
-	h2{font-size:1.3em; padding:2em 0.625em; color: $blue}
+	h1{color: $blue; padding:0.3em 0.3em 1em}
+	h2{font-size:1.3em; padding:0em 0.5em 1em; color:#8b8055}
 	h3{font-size:0.875em; padding:2em 0.625em 1em; color: $blue}
-	li{color: $grey-copy; padding-bottom: 0.625em}
-	ul,ol{padding: 2em; line-height:2; font-size:0.875em}
+	li{padding-bottom: 0.625em; font-family: 'Georgia', serif; font-style: italic}
+	ul,ol{padding: 0 2em 2em; line-height:2; font-size:0.95em}
 	ul{list-style: circle outside}
 	ol{list-style: decimal outside}
 	blockquote{padding:2em; position: relative;
@@ -563,6 +563,7 @@ a{color:inherit}
 	}
 	img{max-width:100%; height:auto; padding:1.5em 0}
 	.o-list{padding:2em}
+	iframe{width:100%; height: 400px; border:0; margin:2em 0}
 }
 .c-logo{width:6em;height:5em; position: absolute; left:1.5em; top:1.5em; overflow:hidden; transition: transform 0.5s $sharpIn; z-index:3;
 	a{display: block; height: 100%; @include image('asigma-logo.svg'); background-repeat:no-repeat; background-size:contain; 
@@ -786,12 +787,12 @@ a{color:inherit}
 .c-loader__line{height: 1px; width: 75%; display: block; position:absolute; left:12%; z-index:1; top:50%; transform:scale3d(1,1,1); background-color:white; transform-origin:0% 50%;
 	.is-visible &{@include scaleInLeft; @include duration(3)}
 }
-.c-standfirst{
-	.o-list{padding:2em;
-		li{padding-bottom:0.2em}
+.c-standfirst{padding-bottom:2.5em;
+	.o-list{padding:0 2em 2em; font-family:'Georgia', serif; font-style:italic;
+		li{padding-bottom:0.2em; color: #575b64}
 	}
-	.o-line{background-color:#d2d2d2}
-	p{color:#565f79; font-weight:300; padding: 2em 0.625em 0; font-family: 'Georgia', serif; line-height: 1.7}
+	.o-line{background-color:#cfcfcf}
+	p{color:#575b64; padding:0 1.5em 2em; line-height: 1.9; font-size:0.95em}
 	.boot &{@include anim; @include fadeInUp; @include delay(1.2)}
 }
 .c-contact{position: relative;

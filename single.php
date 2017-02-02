@@ -26,8 +26,11 @@
 			<h1><?php the_title(); ?></h1>
 		</section>
 	</header>
-	 <?php if ($pointers): ?>
-	 	<section class="c-standfirst">
+ 	<section class="c-standfirst">
+ 		<?php if ($pointers): ?>
+ 			<p><?php echo $standfirst; ?></p>
+ 		<?php endif ?>
+ 		<?php if ($pointers): ?>
 	 		<div class="o-list">
 	 			<ul>
 	 				<?php foreach ($pointers as $pointer) {
@@ -35,13 +38,11 @@
 	 				} ?>
 	 			</ul>
 	 		</div>
-	 		<span class="o-line"></span>
-	 		<p><?php echo $standfirst; ?></p>
-	 	</section>
-	 <?php endif ?>
-	 
+ 		<?php endif ?>
+ 		<span class="o-line"></span>
+ 	</section>
 	<section class="c-story">
-		<?php the_content(); ?>
+		<?php remove_editor_styles(); the_content(); ?>
 	</section>
 	<footer class="o-content__footer">
 		<?php $author = get_field('asg_author'); ?>

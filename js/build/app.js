@@ -384,5 +384,6 @@ jQuery(document).ready(function($) {
 
 	function resetImageWrap(){
 		$('.alignnone').closest('p').addClass('s--reset');
+		$('.highcharts-iframe').closest('p').addClass('s--reset');
 	}
 });
