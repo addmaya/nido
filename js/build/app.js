@@ -129,7 +129,6 @@ jQuery(document).ready(function($) {
 				d.addClass('is-active');
 			}
 			if(t == 'project'){
-				alert('year');
 				$('.c-line-2').hide();
 			}
 		}
@@ -144,7 +143,7 @@ jQuery(document).ready(function($) {
 	});
 	posts.init();
 
-	//home
+	//project
 	var project = Barba.BaseView.extend({
 	  namespace: 'project',
 	  onEnter: function() {
@@ -203,6 +202,9 @@ jQuery(document).ready(function($) {
 	    	
 	    	splashSwiper.slideTo(slideIndex);
 	    }); 
+	  },
+	  onLeave: function(){
+	  	$('body').removeClass('t-dark');
 	  }
 	});
 	home.init();
