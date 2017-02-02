@@ -20,7 +20,7 @@
 				$body = 'Email: '.$email."\n".'Name: '.$name."\n".'Phone Number: '.$number."\n".'Message: '.$message;
 				$headers = 'From: '.$name.' <'.$emailto.'>' . "\r\n" . 'Reply-To: ' . $email;
 				wp_mail($emailto, 'Asigma Website Comment', $body, $headers);
-				echo 'Sent';	
+				echo $body;	
 			}
 			else {
 				print 'Nice Try';

@@ -45,6 +45,7 @@ $sharpIn: cubic-bezier(0.03, 0.45, 0.25, 1);
 .u-pl{padding-left:1em;
 	@include device(xs){padding-left:0}
 }
+.u-half{width: 50%}
 .u-pdb-3em{padding-bottom:3em}
 .u-mb{margin-bottom:4em}
 .u-mt{margin-top: 3em}
@@ -284,7 +285,7 @@ a{color:inherit}
 	cite{font-size: 0.625em; font-family: $roboto; text-transform: uppercase; display: block; font-size:0.35em; margin-top:1.2em; color: #bfbfbf}
 }
 .o-form{padding-top: 4em; @extend .u-clear;
-	&.s--reserve{background-color: $blue; padding:2.5em 0;
+	&.s--reserve{background-color: $blue; padding:2.5em 0; margin-top: 2.5em;
 		input{width:95%}
 	}
 	legend{font-size:0.75em; opacity:0.9; padding-bottom:4em; padding-left:0.625em; text-transform: uppercase}
@@ -293,7 +294,9 @@ a{color:inherit}
 	::-moz-placeholder {color: $blue; text-transform: uppercase}
 	:-ms-input-placeholder {color: $blue; text-transform: uppercase}
 }
-.o-form__status{text-transform: uppercase; font-size:0.75em; color: $blue; padding: 1.5em 0}
+.o-form__status{text-transform: uppercase; font-size:0.75em; color: $blue; padding: 1.5em 0;
+	.s--reserve &{color: white}
+}
 .o-form__ele{margin-bottom: 2.25em;
 	&.last{margin-bottom:0}
 	.s--reserve &{width:percentage(1/3); float: left;}
@@ -350,7 +353,9 @@ a{color:inherit}
 	}
 }
 .o-content__section{padding:2em 0;
-	p{@extend .u-copy; margin:3em 0}
+	p{@extend .u-copy; margin:3em 0;
+		&.s--reset{margin:2em 0 0.75em}
+	}
 	h5{color: $blue}
 	.boot &{@include anim; @include delay(0.5); @include fadeInUp}
 }
@@ -456,9 +461,9 @@ a{color:inherit}
 .o-meta__item{display: inline-block; margin-right:0.75em; margin-bottom: 0.625em; position: relative;
 	&:after{content:"/"; padding-left:0.75em}
 }
-.o-service__thumb{height:16em; background-color:#383838; margin-bottom: 3em; position: relative; background-size:cover; float: left; width:percentage(1/3);
-	span{display: inline-block; position: absolute; bottom:-10%; color: #fff; background-color: $blue; padding:1.5em 1em; font-family: $playfair; font-size:1.2em}
-	@include device(xs){margin-right:0; width: auto; float:none;}
+.o-service__thumb{height:16em; background-color:#9aa9d3; margin-bottom: 3em; position: relative; background-size:cover; float: left; width:percentage(1/3);
+	span{display: inline-block; position: absolute; bottom:-10%; color: #fff; background-color: $blue; padding:1.5em 1em; font-family: $playfair; font-size:1.2em; line-height: 1.5}
+	@include device(xs){margin-right:0; width: auto; float:none}
 }
 .o-service__desc{margin-bottom: 1em; width:percentage(2/3); float: right;
 	.o-line{margin-top:2em; background-color:#b7b7d7}
@@ -505,11 +510,35 @@ a{color:inherit}
 	}
 	@include device(xs){width:50%}
 }
-.js-top{position: fixed; bottom:0; margin:2em; color: $blue; text-transform: uppercase; font-size: 0.75em; font-family: $roboto; left:0; font-weight: 700;
+.o-button--video{width: 5em; height: 5em; display: inline-block; background-position: center; background-repeat: no-repeat; @include image('btn-play.svg'); background-size: contain; transition: opacity 0.5s ease;
+	&:hover{opacity: 0.6}
 }
-#barba-wrapper, .barba-container{width: 100%; height: 100%}
+.o-contacts{position: absolute; font-family: $playfair; font-size:0.75em; line-height:1.5;z-index:2; overflow: hidden; transition:color 0.5s ease; color: $blue;
+	a{display: block}
+	p{line-height:1.5}
+	.t-dark &, .is-open &{color: #fff;
+		a{color: white}
+	}
+	.boot &{
+		.u-wrap{@include anim; @include fadeInLeft;}
+	}
+	&.u-col-4{
+		.u-wrap{@include delay(0.8)}
+	}
+	&.u-col-5{
+		.u-wrap{@include delay(1)}
+	}
+	&.u-white{color:white;
+		a{color:white}
+		.o-line{background-color:white}
+	}
+	@include device(xs){position: static; margin-bottom: 1.5em; transition:opacity 0.3s ease;}
+}
 
 /*components*/
+#barba-wrapper, .barba-container{width: 100%; height: 100%}
+.js-top{position: fixed; bottom:0; margin:2em; color: $blue; text-transform: uppercase; font-size: 0.75em; font-family: $roboto; left:0; font-weight: 700;
+}
 @for $i from 0 through 5 {
 	.u-col-#{$i}{left: percentage($i/6);
 		.c-hotspots__item__title{@include delay(1+(0.2*$i))}
@@ -583,27 +612,7 @@ a{color:inherit}
 		}
 	}
 }
-.o-contacts{position: absolute; font-family: $playfair; font-size:0.75em; line-height:1.5;z-index:2; overflow: hidden; transition:color 0.5s ease; color: $blue;
-	a{display: block}
-	p{line-height:1.5}
-	.t-dark &, .is-open &{color: #fff;
-		a{color: white}
-	}
-	.boot &{
-		.u-wrap{@include anim; @include fadeInLeft;}
-	}
-	&.u-col-4{
-		.u-wrap{@include delay(0.8)}
-	}
-	&.u-col-5{
-		.u-wrap{@include delay(1)}
-	}
-	&.u-white{color:white;
-		a{color:white}
-		.o-line{background-color:white}
-	}
-	@include device(xs){position: static; margin-bottom: 1.5em; transition:opacity 0.3s ease;}
-}
+
 .c-hotspots{position: absolute; width: 100%; top:40%; z-index: 5;
 	.o-index{transform:scale(1,1); opacity: 0.7}
 	@include device(xs){display:none}
@@ -825,9 +834,25 @@ a{color:inherit}
 }
 .c-pop__box{background-color: #fff; width: 960px; height: 540px; margin: 0 auto; position: relative; text-align: center}
 .c-pop__close{width: 2em;height: 2em; background-position:center; background-repeat: no-repeat;; background-size: contain; @include image('btn-close.svg'); display: inline-block; position: absolute; top: -36px; right: 0; transition:opacity 0.3s ease;
-	&:hover{opacity:0.6;};
-}
-.o-button--video{width: 5em; height: 5em; display: inline-block; background-position: center; background-repeat: no-repeat; @include image('btn-play.svg'); background-size: contain; transition: opacity 0.5s ease;
-	&:hover{opacity: 0.6}
+	&:hover{opacity:0.6;}
 }
 
+.c-map{background-color: $blue; margin-top: 2em; height: 540px; position: relative}
+.c-map__geo{background-color:#f5f5f5; width: percentage(3/4); float: left; height: 100%;
+	#map-data{opacity: 0}
+	@include device(xs){width: auto; float:none;}
+}
+.c-map__meta{background-color: $blue; width:percentage(1/4); float: left; height:100%; color: #fff; overflow: scroll;
+	.o-line{background-color: #fff; margin: 2em 0; opacity: 0.15}
+	h4{color:white; padding:1.5em 0 2em}
+	p{color:white; margin: 0;
+		a{display: block;}
+	}
+	.o-button{padding-left: 0; margin-top: 1em}
+	@include device(xs){width: auto; float:none; overflow: visible}
+}
+.c-plots__list{
+	li{padding-bottom: 0.25em}
+	.c-pop__close{position: static; width: 1.5em;height: 1.5em;}	
+}
+.c-plot__id{font-size: 0.875em; display: inline-block; position: relative; top: -5px; padding-right: 2.5em}

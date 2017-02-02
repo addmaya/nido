@@ -5,10 +5,10 @@
 <section class="o-content">
 	<div class="c-contact">
 		<div class="u-wrap">
-			<blockquote class="o-quote">
+			<!-- <blockquote class="o-quote">
 				"<?php the_field('quote'); ?>"
 				<cite><?php the_field('quote_author'); ?></cite>
-			</blockquote>
+			</blockquote> -->
 			<form id="form_contact" class="o-form u-clear" action="<?php echo get_admin_url();?>admin-post.php" method="post">
 				<div class="u-g2-1">
 					<div class="o-form__ele">

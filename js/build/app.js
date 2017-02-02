@@ -149,6 +149,7 @@ jQuery(document).ready(function($) {
 	  namespace: 'project',
 	  onEnter: function() {
 	  	$('.c-line-2, .c-line-4').hide();
+	  	submitContact();
 	  },
 	  onLeave: function(){
 	  	$('.c-line-2, .c-line-4').show();
@@ -210,89 +211,7 @@ jQuery(document).ready(function($) {
 	var contact = Barba.BaseView.extend({
 	  namespace: 'contact',
 	  onEnter: function() {
-	     if (!Modernizr.input.placeholder) {
-	           $("input[placeholder], textarea[placeholder]").each(function() {
-	               var val = $(this).attr("placeholder");
-	               if (this.value == "") {
-	                   this.value = val;
-	               }
-	               $(this).focus(function() {
-	                   if (this.value == val) {
-	                       this.value = "";
-	                   }
-	               }).blur(function() {
-	                   if ($.trim(this.value) == "") {
-	                       this.value = val;
-	                   }
-	               })
-	           });
-	           $('#form_contact').submit(function() {
-	               $(this).find("input[placeholder], textarea[placeholder]").each(function() {
-	                   if (this.value == $(this).attr("placeholder")) {
-	                       this.value = "";
-	                   }
-	               });
-	           });
-	       }
-	     if (!Modernizr.input.required) {
-	         $.validator.addMethod("valueNotEquals", function(value, element, arg) {
-	                 return arg != value;
-	             },
-	             "Value must not equal arg."
-	         );
-	         $('#form_contact').validate({
-	             rules: {
-	                 txt_name: {
-	                     valueNotEquals: "Your Name",
-	                     required: true
-	                 },
-	                 txt_telephone: {
-	                     valueNotEquals: "Telephone",
-	                     required: true
-	                 },
-	                 txt_email: {
-	                     valueNotEquals: "Email",
-	                     required: true
-	                 },
-	                 txt_message: {
-	                     valueNotEquals: "Message",
-	                     required: true
-	                 }
-	             },
-	             errorPlacement: function(error, element) {},
-	             invalidHandler: function(event, validator) {
-	                 $('#form_contact .o-form__status').html('Check the fields in red');
-	             },
-	             submitHandler: function(form) {
-	                 $(form).ajaxSubmit({
-	                     beforeSend: function() {
-	                         $('#form_contact .o-form__status').html('Sending...');
-	                     },
-	                     success: function() {
-	                         $('#form_contact .o-form__status').html('Thank you. Your Message was sent');
-	                         $('#form_contact input[name=txt_name]').val($('input[name=txt_name]').attr('placeholder'));
-	                         $('#form_contact input[name=txt_email]').val($('input[name=txt_email]').attr('placeholder'));
-	                         $('#form_contact input[name=txt_telephone]').val($('input[name=txt_telephone]').attr('placeholder'));
-	                         $('#form_contact textarea').val($('textarea').attr('placeholder'));
-	                     }
-	                 });
-	             }
-	         });
-	     } 
-	     else {
-	         $('#form_contact').ajaxForm({
-	             beforeSend: function() {
-	                 $('#form_contact .o-form__status').html('Sending...');
-	             },
-	             success: function() {
-	                 $('#form_contact .o-form__status').html('Thank you. Your Message was sent');
-	                 $('#form_contact input[type=submit]').val('Send Message');
-	                 $('#form_contact input[type=text]').val('');
-	                 $('#form_contact textarea').val('');
-	             },
-	             resetForm: true
-	         });
-	     }
+	    submitContact();
 	  }
 	});
 	contact.init();
@@ -385,5 +304,90 @@ jQuery(document).ready(function($) {
 	function resetImageWrap(){
 		$('.alignnone').closest('p').addClass('s--reset');
 		$('.highcharts-iframe').closest('p').addClass('s--reset');
+	}
+	function submitContact(){
+		if (!Modernizr.input.placeholder) {
+		      $("input[placeholder], textarea[placeholder]").each(function() {
+		          var val = $(this).attr("placeholder");
+		          if (this.value == "") {
+		              this.value = val;
+		          }
+		          $(this).focus(function() {
+		              if (this.value == val) {
+		                  this.value = "";
+		              }
+		          }).blur(function() {
+		              if ($.trim(this.value) == "") {
+		                  this.value = val;
+		              }
+		          })
+		      });
+		      $('#form_contact').submit(function() {
+		          $(this).find("input[placeholder], textarea[placeholder]").each(function() {
+		              if (this.value == $(this).attr("placeholder")) {
+		                  this.value = "";
+		              }
+		          });
+		      });
+		  }
+		if (!Modernizr.input.required) {
+		    $.validator.addMethod("valueNotEquals", function(value, element, arg) {
+		            return arg != value;
+		        },
+		        "Value must not equal arg."
+		    );
+		    $('#form_contact').validate({
+		        rules: {
+		            txt_name: {
+		                valueNotEquals: "Your Name",
+		                required: true
+		            },
+		            txt_telephone: {
+		                valueNotEquals: "Telephone",
+		                required: true
+		            },
+		            txt_email: {
+		                valueNotEquals: "Email",
+		                required: true
+		            },
+		            txt_message: {
+		                valueNotEquals: "Message",
+		                required: true
+		            }
+		        },
+		        errorPlacement: function(error, element) {},
+		        invalidHandler: function(event, validator) {
+		            $('#form_contact .o-form__status').html('Check the fields in red');
+		        },
+		        submitHandler: function(form) {
+		            $(form).ajaxSubmit({
+		                beforeSend: function() {
+		                    $('#form_contact .o-form__status').html('Sending...');
+		                },
+		                success: function() {
+		                    $('#form_contact .o-form__status').html('Thank you. Your Message was sent');
+		                    $('#form_contact input[name=txt_name]').val($('input[name=txt_name]').attr('placeholder'));
+		                    $('#form_contact input[name=txt_email]').val($('input[name=txt_email]').attr('placeholder'));
+		                    $('#form_contact input[name=txt_telephone]').val($('input[name=txt_telephone]').attr('placeholder'));
+		                    $('#form_contact textarea').val($('textarea').attr('placeholder'));
+		                }
+		            });
+		        }
+		    });
+		} 
+		else {
+		    $('#form_contact').ajaxForm({
+		        beforeSend: function() {
+		            $('#form_contact .o-form__status').html('Sending...');
+		        },
+		        success: function() {
+		            $('#form_contact .o-form__status').html('Thank you. Your Message was sent');
+		            $('#form_contact input[type=submit]').val('Send Message');
+		            $('#form_contact input[type=text]').val('');
+		            $('#form_contact textarea').val('');
+		        },
+		        resetForm: true
+		    });
+		}
 	}
 });

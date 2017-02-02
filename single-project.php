@@ -84,13 +84,45 @@
 			</div>
 		</section>
 		<section class="o-content__section" id="sect-3">
-			<h4 class="u-wrap">Interactive Map</h4>
-			<figure class="u-bkg-img js-lazy" style="background-color: #2B4386; margin-top:2em">
-				<?php echo do_shortcode('[plots]') ?>
-			</figure>
+			<h4 class="u-wrap">Reserve Plot(s)</h4>
+			<section class="u-wrap u-half">
+				<p class="s--reset">Use the Interactive below map to select and reserve plots on the Mutundwe Hill Estate. Plots marked red are sold.</p>
+			</section>			
+			<div class="c-map">
+				<div class="c-map__geo">
+					<?php echo do_shortcode('[plots]') ?>
+				</div>
+				<div class="c-map__meta">
+					<section class="u-wrap">
+						<h4>Selected Plots</h4>
+						<span class="o-figure">3</span>
+						<ul class="c-plots__list">
+							<li><span class="c-plot__id">Plot 489 (12 Decimals)</span> <a href="#" class="c-pop__close"></a></li>
+							<li><span class="c-plot__id">Plot 512 (33 Decimals)</span> <a href="#" class="c-pop__close"></a></li>
+							<li><span class="c-plot__id">Plot 301 (20 Decimals)</span> <a href="#" class="c-pop__close"></a></li>
+						</ul>
+						<div class="t-dark">
+							<a href="#form_contact" class="o-button">
+								<div class="o-button__dash"></div>
+								<span class="o-button__title">Reserve</span>
+								<div class="o-arrow">
+									<span class="o-arrow--stem"></span>
+									<div class="o-arrow--head"><span></span><span></span></div>
+								</div>
+								<span class="o-button__arrow"></span>
+							</a>
+						</div>
+					</section>
+					<span class="o-line"></span>
+					<section class="u-wrap">
+						<p class="u-white"><a href="tel:+256392159560">+256 392 159 560</a><a target="_blank" href="mailto:sales@asigmacapital.com">sales@asigmacapital.com</a></p>
+					</section>
+					<span class="o-line"></span>
+				</div>
+			</div>
 		</section>
 		<section class="o-content__section" id="sect-4">
-			<h4 class="u-wrap">Reserve A Plot</h4>
+			<h4 class="u-wrap">Pricing</h4>
 			<div class="u-grid-2col">
 				<div class="u-col">
 					<ul class="c-features">
@@ -124,20 +156,25 @@
 					<span class="o-line"></span>
 				</div>
 			</div>
-			<form class="o-form s--reserve u-mt">
+			<form id="form_contact" class="o-form s--reserve" action="<?php echo get_admin_url();?>admin-post.php" method="post">
 				<legend class="u-white">Call <a href="tel:+256392159560">+256 392 159 560</a> / <a target="_blank" href="mailto:sales@asigmacapital.com">sales@asigmacapital.com</a></legend>
 				<div class="u-wrap">
 					<div class="o-form__ele">
-						<input class="o-input--txt" type="text" placeholder="Name">
+						<input class="o-input--txt" type="text" placeholder="Name" name="txt_name" required>
 					</div>
 					<div class="o-form__ele">
-						<input class="o-input--txt" type="email" placeholder="Email">
+						<input class="o-input--txt" type="email" placeholder="Email" name="txt_email" required>
 					</div>
 					<div class="o-form__ele">
-						<input class="o-input--txt" type="text" placeholder="Phone">
+						<input class="o-input--txt" type="text" placeholder="Phone" name="txt_telephone" required>
+					</div>
+					<div class="u-hide">
+						<input type="hidden" name="action" value="form_submit"/>
+						<input type="text" name="form_spam_key"/>
+						<?php wp_nonce_field('form_nonce_key','form_nonce');?>
 					</div>
 					<div class="t-dark u-right">
-						<a href="#" class="o-button">
+						<button class="o-button">
 							<div class="o-button__dash"></div>
 							<span class="o-button__title">Reserve</span>
 							<div class="o-arrow">
@@ -145,8 +182,9 @@
 								<div class="o-arrow--head"><span></span><span></span></div>
 							</div>
 							<span class="o-button__arrow"></span>
-						</a>
+						</button>
 					</div>
+					<div class="o-form__status"></div>
 				</div>
 			</form>
 		</section>
