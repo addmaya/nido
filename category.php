@@ -63,7 +63,7 @@
 
 	</section>
 </section>
-<div class="c-next -pg-footer">
+<div class="c-next s--footer">
 	<div class="u-wrap">
 		<span class="o-subtitle u-mb">Explore</span>
 		<h2><a data-target="insights" href="<?php echo home_url(); ?>/insights">Asigma Insights</a></h2>

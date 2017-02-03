@@ -106,7 +106,7 @@
 		<?php endif; ?>
 	</section>
 </section>
-<div class="c-next -pg-footer">
+<div class="c-next s--footer">
 	<div class="u-wrap">
 		<span class="o-subtitle u-mb">Next</span>
 		<h2><a data-target="data" href="<?php echo home_url(); ?>/data">Data</a></h2>

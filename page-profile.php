@@ -3,9 +3,6 @@
 <div class="u-yingyang">
 	<section class="u-ying">
 		<div class="u-wrap">
-			<ul class="o-menu inline">
-				<li class="o-menu__item"><a data-target="profile" href="<?php echo home_url(); ?>/careers">Careers</a></li>
-			</ul>
 			<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 			<header class="u-ying__header">
 				<h1><?php the_field('fancy_title'); ?></h1>
@@ -14,7 +11,7 @@
 				<?php the_content(); ?>
 				<a data-target="profile" href="<?php echo home_url(); ?>/careers" class="o-button">
 					<div class="o-button__dash"></div>
-					<span class="o-button__title">Join Asigma</span>
+					<span class="o-button__title">Careers</span>
 					<div class="o-arrow">
 						<span class="o-arrow--stem"></span>
 						<div class="o-arrow--head"><span></span><span></span></div>
@@ -25,13 +22,13 @@
 		</div>
 	</section>
 	<section class="u-yang">
+		<?php $board_mems = new WP_Query(array('post_type'=>'board', 'posts_per_page'=>-1, 'orderby' => 'menu_order', 'order'=>'ASC')); ?>
+		<?php if ( $board_mems->have_posts() ) : ?>
 		<div class="u-wrap">
 			<h4 class="u-align-right">Advisory Board</h4>
 		</div>
 		<ul class="u-yang__list">
-		<?php 
-		$board_mems = new WP_Query(array('post_type'=>'board', 'posts_per_page'=>-1, 'orderby' => 'menu_order', 'order'=>'ASC')); ?>
-		<?php if ( $board_mems->have_posts() ) : ?>
+		
 			<?php while ( $board_mems->have_posts() ) : $board_mems->the_post(); ?>
 				<li class="u-yang__list__item">
 					<a data-target="profile" class="o-member u-bkg-white" href="<?php the_permalink(); ?>">
@@ -48,11 +45,11 @@
 				</li>
 			<?php endwhile; ?>
 			<?php wp_reset_postdata(); ?>
-		<?php endif; ?>
 		</ul>
 		<div class="u-wrap">
 			<h4 class="u-align-right">Operations</h4>
 		</div>
+		<?php endif; ?>
 		<ul class="u-yang__list">
 		<?php 
 		$team = new WP_Query(array('post_type'=>'staff', 'posts_per_page'=>-1,  'orderby' => 'menu_order', 'order'=>'ASC')); ?>
@@ -77,7 +74,7 @@
 		</ul>
 	</section>
 </div>
-<div class="c-next -pg-footer">
+<div class="c-next s--footer">
 	<div class="u-wrap">
 		<span class="o-subtitle u-mb">Next</span>
 		<h2><a data-target="advisory" href="<?php echo home_url();?>/advisory">Advisory Services</a></h2>

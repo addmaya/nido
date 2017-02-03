@@ -1,6 +1,14 @@
 <?php
 	add_action('admin_post_form_submit', 'form_submit');
 	add_action('admin_post_nopriv_form_submit', 'form_submit');
+
+	function remove_empty_lines( $content ){
+		$content = preg_replace("/&nbsp;/", "", $content);
+		return $content;
+	}
+	add_action('content_save_pre', 'remove_empty_lines');
+
+
 	function form_submit(){
 		if (isset($_POST['form_spam_key']) && $_POST['form_spam_key']==''){
 			if(isset($_POST['form_nonce']) || wp_verify_nonce($_POST['form_nonce'], 'form_nonce_key')){

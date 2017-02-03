@@ -39,7 +39,7 @@
 	</div>
 	<?php endif; ?>
 </section>
-<div class="c-next -pg-footer">
+<div class="c-next s--footer">
 	<div class="u-wrap">
 		<span class="o-subtitle u-mb">Next</span>
 		<h2><a data-target="insights"href="<?php echo home_url(); ?>/press">Press</a></h2>

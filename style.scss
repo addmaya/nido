@@ -16,7 +16,7 @@ Author URI: http://addmaya.com/
 @mixin device($device){
   @if $device == xs {@media only screen and (max-width: 767px){@content}}
   @else if $device == xs-landscape{@media only screen and (max-width: $tablet - 1) and (orientation : landscape){@content}}
-  @else if $device == sm {@media only screen and (max-width: 1000px){@content}}
+  @else if $device == sm {@media only screen and (max-width: 959px){@content}}
   @else if $device == md{@media only screen and (max-width: 1200px){@content}}
   @else if $device == lg{@media only screen and (max-width: 1600px){@content}}
   @else if $device == xlg{@media only screen and (min-width:1900px){@content}}
@@ -67,11 +67,12 @@ $sharpIn: cubic-bezier(0.03, 0.45, 0.25, 1);
 }
 .u-yingyang{@extend .u-clear; width:percentage(4/6); margin-left:percentage(1/6); height: auto;
 	.o-content &{width: 100%; margin-left:0}
+	@include device(sm){width:auto; margin-left:0}
 	@include device(xs){width:auto; margin-left: auto}
 }
 .u-ying{color: #fff; height: 100%; position: relative; width:50%; float: left;
 	.u-wrap{padding-top:7em}
-	.o-line{transform-origin:0% 50%}
+	.o-line{transform-origin:0% 50%; background-color: #FFF}
 	p{@extend .u-copy; color:#b9c2dc}
 	&:before{position: fixed; background-color: $blue; z-index:-1; width:percentage(2/6); top:0; height: 100%; content:""; transform-origin:0% 0%; }
 	.boot &{
@@ -83,7 +84,9 @@ $sharpIn: cubic-bezier(0.03, 0.45, 0.25, 1);
 	.o-arrow--stem{background-color:#fff}
 	.o-arrow--head span{background-color: #fff}
 	a{color:#fff}
-
+	@include device(sm){
+		&:before{width:percentage(3/6)}
+	}
 	@include device(xs){width:auto; float: none;
 		&:before{position: absolute; top: 4.5em; height:95%; width: 100%}
 	}
@@ -149,7 +152,7 @@ body{font-family: $roboto; background-color: #FFF; @include prefix((transition: 
 	&.u-oh{overflow: hidden}
 }
 h1{font-size: 2em; font-family: $playfair; line-height:1.5;
-	@include device(xs){font-size:1.8em}
+	@include device(sm){font-size:1.8em}
 }
 h2{font-size: 1.75em; font-family: $playfair; line-height:1.5;
 	@include device(xs){font-size:1.2em}
@@ -342,7 +345,8 @@ a{color:inherit}
 		figure{@include anim; @include fadeInLeft; @include delay(0.75)}
 		&:before{@include anim; @include scaleInLeft; @include delay(0.5)}
 	}
-	@include device(xs){width:auto; position:relative; height:auto; left:0; top:5em;
+	@include device(sm){width:percentage(2/6); left:0}
+	@include device(xs){width:auto; position:relative; height:auto; top:5em;
 		&.s--svs{height:12em}
 	}
 }
@@ -350,9 +354,10 @@ a{color:inherit}
 	&.s--project{margin-left:percentage(1/6); width: percentage(4/6)}
 	.o-menu{margin:2em 0}
 	&.s--story{background-color: #fff}
-	@include device (xs){margin-left:0; width:auto; padding-top:8em;
-		&.s--project{margin-left:0; width: auto}
+	@include device(sm){width:auto;
+		&.s--project{margin-left:0; width:auto}
 	}
+	@include device (xs){margin-left:0; padding-top:8em}
 }
 .o-content__header{width:percentage(2/3); position: relative; padding-bottom: 2em;
 	h1{color: $blue}
@@ -444,6 +449,7 @@ a{color:inherit}
 	.block &{width:100%; float:none; position: relative;
 		&::after{content:""; position: absolute; left:0; bottom:-6px; height: 1px; width: 30%; background-color: #d6d6d6}
 	}
+	@include device(sm){width:50%}
 	@include device(xs){width:auto; float:none; width:auto}
 }
 .o-article{
@@ -547,13 +553,14 @@ a{color:inherit}
 		a{color:white}
 		.o-line{background-color:white}
 	}
+	@include device(sm){font-size:0.625em}
 	@include device(xs){position: static; margin-bottom: 1.5em; transition:opacity 0.3s ease;}
 }
 
 /*components*/
 #barba-wrapper, .barba-container{width: 100%; height: 100%}
 .js-top{position: fixed; bottom:0; margin:2em; color: $blue; text-transform: uppercase; font-size: 0.75em; font-family: $roboto; left:0; font-weight: 700;
-	@include device(xs){display: none; opacity:0}
+	@include device(sm){display: none; opacity:0}
 }
 @for $i from 0 through 5 {
 	.u-col-#{$i}{left: percentage($i/6);
@@ -562,24 +569,29 @@ a{color:inherit}
 }
 .c-grid__line{width: 1px; height: 100%; position: fixed; background-color: #000; top: 0; opacity: 0.07; z-index:10; transition:background-color 0.5s ease; @include prefix((transform-origin:0% 0%));
 	.t-dark &{background-color: #6fa1ff; opacity: 0.2}
+	@include device(sm){display:none;
+		.t-dark &{display: block}
+	}
 	@include device(xs){display:none}
-	
 }
 @for $i from 0 through 5 {
 	.c-line-#{$i}{left: percentage($i/6); @extend .c-grid__line;
 		.boot &{@include scaleInDown; @include anim; @include delay(0.15*$i)}
+		&.u-hide{opacity:0}
 	}
 }
 .c-line-2{z-index: 20}
 .c-next{background-color:#e8e8e8; padding: 3em 0 5em; margin-top: 6em; padding-right:percentage(1/3); position: relative;
 	h2{color: $blue; width:percentage(3/4)}
 	.o-pager{position: absolute; top: 35%; right: 20px}
-	&.-pg-footer{margin-left:percentage(1/6); width:percentage(4/6); margin:0 auto; padding-right:0;
+	&.s--footer{margin-left:percentage(1/6); width:percentage(4/6); margin:0 auto; padding-right:0;
 		.o-pager{top:40%}
+	}
+	@include device(sm){
+		&.s--footer{margin-left:0; width:auto; margin:0 auto; padding-right:0;}
 	}
 	@include device(xs){padding-right:0;
 		h2{width:auto}
-		&.-pg-footer{margin-left:0; width:auto}
 		.o-pager{display:none}
 	}
 }
@@ -622,6 +634,9 @@ a{color:inherit}
 	.boot &{
 		a{@include fadeInUp; @include anim;}
 	}
+	@include device(sm){
+		a{@include image('asigma-logo-white.svg')}
+	}
 	@include device(xs){width: 3em; height: 3em; position: static; margin-bottom:1.5em; padding-left:0.625em;
 		a{@include image('asigma-logo-mark.svg'); 
 			.t-dark &, .is-open &{@include image('asigma-logo-mark-white.svg')}
@@ -635,6 +650,9 @@ a{color:inherit}
 }
 .c-hotspots__item{position: absolute; width:percentage(1/6); top:0; overflow: hidden; opacity:0.5; @include prefix((transition:opacity 0.5s ease));
 	&:hover, &.is-active{opacity:1}
+	@include device(sm){
+		h3{font-size:1.2em}
+	}
 }
 .c-hotspots__item__title{position: relative; display: block; font-size:0.5em; width:92%; padding: 1.5em 0; color: white;
 	&:after{content:""; bottom: 13px; position: absolute; height: 1px; background-color: white; width: 100%; left: 20px; @include prefix((transform-origin:0% 50%)); @include prefix((transform:scale(0,1))); @include prefix((transition: transform 0.5s cubic-bezier(0, 0.55, 0.27, 0.99)))}
@@ -691,7 +709,8 @@ a{color:inherit}
 		&.is-animating-out{@include fadeOutLeft}
 		.o-line{display:none}
 	}
-	@include device(xs){position: static; margin-bottom: 1.5em;
+	@include device(sm){font-size:0.875em}
+	@include device(xs){position: static; margin-bottom: 1.5em; font-size:1em;
 		&.s--static{position: static}
 	}
 }
@@ -780,6 +799,7 @@ a{color:inherit}
 }
 .c-slide__copy{position:absolute; bottom:5%; width:percentage(3/6); color: white; left:percentage(2/6); overflow: hidden; padding-bottom:0.5em;z-index:2;
 	h3{display: none; font-size: 0.75em; padding-bottom: 1.5em}
+	@include device(sm){width: percentage(4/6); left: percentage(1/6);}
 	@include device(xs){left:0; width: auto; bottom:auto; top: 30%;
 		h3{display: block; padding-bottom: 1.5em}
 	}
@@ -847,7 +867,7 @@ a{color:inherit}
 	iframe{width: 100%; height: 100%; top:0; left: 0;}
 }
 .c-pop__box{background-color: #fff; width: 960px; height: 540px; margin: 0 auto; position: relative; text-align: center;
-	@include device(xs){width:auto}
+	@include device(sm){width:auto}
 }
 .c-pop__close{width: 2em;height: 2em; background-position:center; background-repeat: no-repeat;; background-size: contain; @include image('btn-close.svg'); display: inline-block; position: absolute; top: -36px; right: 0; transition:opacity 0.3s ease;
 	&:hover{opacity:0.6;}
@@ -858,6 +878,7 @@ a{color:inherit}
 }
 .c-map__geo{background-color:#f5f5f5; width: percentage(3/4); float: left; height: 100%;
 	#map-data{opacity: 0}
+	@include device(sm){width: percentage(4/6)}
 	@include device(xs){width: auto; float:none; height:200px}
 }
 .c-map__meta{background-color: $blue; width:percentage(1/4); float: left; height:100%; color: #fff; overflow: scroll;
@@ -867,6 +888,7 @@ a{color:inherit}
 		a{display: block;}
 	}
 	.o-button{padding-left: 0; margin-top: 1em}
+	@include device(sm){width: percentage(2/6)}
 	@include device(xs){width: auto; float:none; overflow: visible; height:auto;}
 }
 .c-plots__list{

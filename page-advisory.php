@@ -111,7 +111,7 @@
 	</section>
 	<?php endif; ?>
 </section>
-<div class="c-next -pg-footer">
+<div class="c-next s--footer">
 	<div class="u-wrap">
 		<span class="o-subtitle u-mb">Next</span>
 		<h2><a data-target="capital-management" href="<?php echo home_url(); ?>/capital-management">Capital Management</a></h2>

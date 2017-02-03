@@ -91,7 +91,6 @@ jQuery(document).ready(function($) {
 
 	$('.c-menu').on('click', '.c-menu__item a', function() {
 		var me = $(this);
-		$('body').removeClass('t-dark');
 		$('.c-menu').find('.is-active').removeClass('is-active');
 		me.closest('.c-menu__item').addClass('is-active');
 		$('.o-contacts').removeClass('u-white');
@@ -100,6 +99,8 @@ jQuery(document).ready(function($) {
 	});
 	$('.js-show-contact').click(function() {
 		$('.o-contacts').addClass('u-white');
+		$('.c-header').removeClass('is-open');
+		$('.c-menu__toggle').removeClass('is-open');
 	});
 
 	function showSideMenu() {
@@ -146,15 +147,16 @@ jQuery(document).ready(function($) {
 	var project = Barba.BaseView.extend({
 	  namespace: 'project',
 	  onEnter: function() {
-	  	$('.c-line-2, .c-line-4').hide();
+	  	$('.c-line-2, .c-line-4').addClass('u-hide');
 	  	submitContact();
 	  },
 	  onLeave: function(){
-	  	$('.c-line-2, .c-line-4').show();
+	  	$('.c-line-2, .c-line-4').removeClass('u-hide');
 	  }
 	});
 	project.init();
 
+	//home
 	var home = Barba.BaseView.extend({
 	  namespace: 'home',
 	  onEnter: function() {
@@ -213,6 +215,10 @@ jQuery(document).ready(function($) {
 	  namespace: 'contact',
 	  onEnter: function() {
 	    submitContact();
+	    $('.c-line-2, .c-line-4').addClass('u-hide');
+	  },
+	  onLeave: function(){
+	  	$('.c-line-2, .c-line-4').removeClass('u-hide');
 	  }
 	});
 	contact.init();
