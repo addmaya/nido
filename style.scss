@@ -19,7 +19,7 @@ Author URI: http://addmaya.com/
   @else if $device == sm {@media only screen and (max-width: 959px){@content}}
   @else if $device == md{@media only screen and (max-width: 1200px){@content}}
   @else if $device == lg{@media only screen and (max-width: 1600px){@content}}
-  @else if $device == xlg{@media only screen and (min-width:1900px){@content}}
+  @else if $device == xlg{@media only screen and (min-width:2000px){@content}}
 }
 @mixin prefix($map, $vendors: webkit moz ms o) {
   @each $prop, $value in $map {
@@ -74,7 +74,9 @@ $sharpIn: cubic-bezier(0.03, 0.45, 0.25, 1);
 	.u-wrap{padding-top:7em}
 	.o-line{transform-origin:0% 50%; background-color: #FFF}
 	p{@extend .u-copy; color:#b9c2dc}
-	&:before{position: fixed; background-color: $blue; z-index:-1; width:percentage(2/6); top:0; height: 100%; content:""; transform-origin:0% 0%; }
+	&:before{position: fixed; background-color: $blue; z-index:0; width:percentage(2/6); top:0; height: 100%; content:""; transform-origin:0% 0%;
+		@include device(xlg){width:25%}
+	}
 	.boot &{
 		.o-line{@include anim; @include delay(1.5); @include scaleInLeft}
 		&:before{@include anim; @include delay(0.4); @include scaleInLeft}
@@ -146,8 +148,10 @@ $sharpIn: cubic-bezier(0.03, 0.45, 0.25, 1);
 .u-th{background-color:$blue; color:#fff}
 
 /*objects*/
-html,body{width:100%; height: 100%}
-body{font-family: $roboto; background-color: #FFF; @include prefix((transition: background-color 0.5s ease));
+html{width: 100%; min-height:100%; position: relative;
+	&.u-height{height:100%}
+}
+body{width:100%; height: 100%; font-family: $roboto; background-color: #FFF; @include prefix((transition: background-color 0.5s ease));
 	&.t-dark{background-color:#fff;}
 	&.u-oh{overflow: hidden}
 }
@@ -336,7 +340,7 @@ a{color:inherit}
 	&.right{right:0}
 	&.left{left:percentage(1/6);}
 }
-.o-page-thumb{width:percentage(1/6); left: percentage(1/6); position: absolute; top:0; height:40%; overflow: hidden;
+.o-page-thumb{width:percentage(1/6); left: percentage(1/6); position: absolute; top:0; height:20em; overflow: hidden;
 	&:before{content:""; position: absolute; background-color:$blue; top:0; height:100%; width: 100%; @include prefix((transform-origin:0% 0%)); z-index:0}
 	.u-table{width: 100%; height: 100%}
 	.u-cell{vertical-align:bottom}
@@ -499,7 +503,7 @@ a{color:inherit}
 .o-icon{width: 3em; height: 3em; border:solid 1px $blue; border-radius: 3em; display: inline-block}
 .o-figure{font-size: 3em; font-weight: 100; display: block; padding:0.2em 0}
 .o-tint--blue{background-color:rgba(43, 67, 134,0.9)}
-.o-member{display: block; height: 15em; background-color:$blue; position: relative; overflow: hidden;
+.o-member{display: block; background-color:$blue; position: relative; overflow: hidden;
 	.boot &{@include anim; @include fadeInLeft}
 	&:hover{
 		.o-member__profile{transform:none}
@@ -507,7 +511,7 @@ a{color:inherit}
 	}
 	&.u-bkg-white{background-color: #FFF}
 }
-.o-member__photo{height: 100%; width: 100%; display: block; background-size:cover; background-repeat: no-repeat; background-position: center; transition: transform 0.8s ease}
+.o-member__photo{padding-bottom:100%; width: 100%; display: block; background-size:cover; background-repeat: no-repeat; background-position: center; transition: transform 0.8s ease}
 .o-member__profile{position: absolute; width: 100%; height: 100%; z-index:1; background-color:$blue; color: white; top:0; @include prefix((transform:translateX(-102%))); @include prefix((transition: transform 0.5s ease));
 	.u-wrap{padding:0.625em}
 	h2{font-size:1.2em; margin-bottom:0.5em}
@@ -561,6 +565,7 @@ a{color:inherit}
 /*components*/
 #barba-wrapper, .barba-container{width: 100%; height: 100%}
 .js-top{position: fixed; bottom:0; margin:2em; color: $blue; text-transform: uppercase; font-size: 0.75em; font-family: $roboto; left:0; font-weight: 700;
+	.t-dark &{display:none; opacity:0}
 	@include device(sm){display: none; opacity:0}
 }
 @for $i from 0 through 5 {
@@ -568,7 +573,11 @@ a{color:inherit}
 		.c-hotspots__item__title{@include delay(1+(0.2*$i))}
 	}
 }
-.c-grid__line{width: 1px; height: 100%; position: fixed; background-color: #000; top: 0; opacity: 0.07; z-index:10; transition:background-color 0.5s ease; @include prefix((transform-origin:0% 0%));
+// .c-grid{position: fixed; top: 0; left:0; z-index:-1; width: 100%; height: 100%;
+// 	.t-dark &{display: none}
+// 	.t-contact &{z-index:0;}
+// }
+.c-grid__line{width: 1px; height: 100%; position: absolute; background-color: #000; z-index: 10; top: 0; opacity: 0.07; transition:background-color 0.5s ease; @include prefix((transform-origin:0% 0%));
 	.t-dark &{background-color: #6fa1ff; opacity: 0.2}
 	@include device(sm){display:none;
 		.t-dark &{display: block}
@@ -689,7 +698,7 @@ a{color:inherit}
 		li{float:none; width:auto}
 	}
 }
-.c-tint{background-color:#F4F4FF; position: fixed; top:0; left: percentage(1/6); width: percentage(5/6); z-index:-2; height: 100%; @include prefix((transform-origin:0% 50%));
+.c-tint{background-color:#F4F4FF; position: absolute; top:0; left: percentage(1/6); width: percentage(5/6); z-index:0; height: 100%; @include prefix((transform-origin:0% 50%));
 	.boot &{@include scaleInLeft; @include anim}
 	&.s--single{background-color:#fff}
 	@include device(xs){display:none}
@@ -854,7 +863,7 @@ a{color:inherit}
 	&:before{background-color:#2c4486; width: 100%; height: 100%; position: absolute; top:0; left:0; z-index: -1; content:""; @include prefix((transform-origin:0% 50%));
 		.boot &{@include scaleInLeft; @include anim}
 	}
-	figure{height: 100%; width:percentage(4/6); position: absolute; top:0; left:0; background-size:cover; background-repeat:no-repeat; background-position:center;
+	figure{height: 100%; width:percentage(4/6); position: absolute; top:0; left:0; background-size:cover; background-repeat:no-repeat; background-position:center; z-index: 1;
 		&:before{content:""; background-color:rgba(255, 255, 255, 0.77); position: absolute; top:0; left:0;z-index: 1; width: 100%; height: 100%}
 		.boot &{@include anim; @include fadeInLeftBig; @include delay(0.5);
 			&:before{@include anim; @include slideInLeft; @include delay(0.9)}
@@ -903,4 +912,6 @@ a{color:inherit}
 .c-team__image{height:15em; background-color:#b2bfe1; background-size:cover; background-position:center; background-repeat:no-repeat; @include image('coffee.jpg');	
 	.boot &{@include anim; @include delay(0.5); @include fadeInUp}
 }
-.c-box{width: 1600px; height: 100%; margin:0 auto; position: fixed}
+.c-box{width:100%; height: 100%; margin:0 auto; position:relative;
+	@include device(xlg){width:75%}
+}

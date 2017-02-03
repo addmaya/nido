@@ -22,6 +22,7 @@
 		<?php wp_head(); ?>		
 	</head>
 	<body class="boot <?php if(is_front_page()){echo 't-dark';}?>">
+		<div class="c-box">
 		<div class="c-loader">
 			<div class="u-table">
 				<div class="u-cell">
