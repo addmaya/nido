@@ -99,9 +99,9 @@
 						<h4>Selected Plots</h4>
 						<span class="o-figure">3</span>
 						<ul class="c-plots__list">
-							<li><span class="c-plot__id">Plot 489 (12 Decimals)</span> <a href="#" class="c-pop__close"></a></li>
+							<!--<li><span class="c-plot__id">Plot 489 (12 Decimals)</span> <a href="#" class="c-pop__close"></a></li>
 							<li><span class="c-plot__id">Plot 512 (33 Decimals)</span> <a href="#" class="c-pop__close"></a></li>
-							<li><span class="c-plot__id">Plot 301 (20 Decimals)</span> <a href="#" class="c-pop__close"></a></li>
+							<li><span class="c-plot__id">Plot 301 (20 Decimals)</span> <a href="#" class="c-pop__close"></a></li>-->
 						</ul>
 						<div class="t-dark">
 							<a href="#form_contact" class="o-button">
