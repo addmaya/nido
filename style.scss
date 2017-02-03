@@ -161,7 +161,7 @@ h1{font-size: 2em; font-family: $playfair; line-height:1.5;
 h2{font-size: 1.75em; font-family: $playfair; line-height:1.5;
 	@include device(xs){font-size:1.2em}
 }
-h3{font-size: 1.5em; font-family: $roboto; text-transform:uppercase}
+h3{font-size: 1.5em; font-family: $roboto; text-transform:uppercase; font-weight: 700}
 h4{font-size: 0.75em; font-family: $roboto; text-transform: uppercase; font-weight: 700; color:$blue;
 	.boot &{@include anim; @include fadeIn; @include delay(0.5)}
 }
