@@ -71,7 +71,7 @@ $sharpIn: cubic-bezier(0.03, 0.45, 0.25, 1);
 	@include device(xs){width:auto; margin-left: auto}
 }
 .u-ying{color: #fff; height: 100%; position: relative; width:50%; float: left;
-	.u-wrap{padding-top:7em}
+	.u-wrap{padding-top:7em; position: relative; z-index:2}
 	.o-line{transform-origin:0% 50%; background-color: #FFF}
 	p{@extend .u-copy; color:#b9c2dc}
 	&:before{position: fixed; background-color: $blue; z-index:0; width:percentage(2/6); top:0; height: 100%; content:""; transform-origin:0% 0%;
@@ -344,7 +344,7 @@ a{color:inherit}
 	&:before{content:""; position: absolute; background-color:$blue; top:0; height:100%; width: 100%; @include prefix((transform-origin:0% 0%)); z-index:0}
 	.u-table{width: 100%; height: 100%}
 	.u-cell{vertical-align:bottom}
-	figure{background-color: transparent; background-size:cover; background-position:center; height:100%; width:100%}
+	figure{background-color: transparent; background-size:cover; background-position:center; height:100%; width:100%; position: relative; z-index:2; }
 	.boot &{
 		figure{@include anim; @include fadeInLeft; @include delay(0.75)}
 		&:before{@include anim; @include scaleInLeft; @include delay(0.5)}
