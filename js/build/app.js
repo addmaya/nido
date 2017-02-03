@@ -147,10 +147,12 @@ jQuery(document).ready(function($) {
 	var project = Barba.BaseView.extend({
 	  namespace: 'project',
 	  onEnter: function() {
+	  	$('body').addClass('t-project');
 	  	$('.c-line-2, .c-line-4').addClass('u-hide');
 	  	submitContact();
 	  },
 	  onLeave: function(){
+	  	$('body').removeClass('t-project');
 	  	$('.c-line-2, .c-line-4').removeClass('u-hide');
 	  }
 	});
@@ -215,9 +217,11 @@ jQuery(document).ready(function($) {
 	  namespace: 'contact',
 	  onEnter: function() {
 	    submitContact();
+	    $('body').addClass('t-contact');
 	    $('.c-line-2, .c-line-4').addClass('u-hide');
 	  },
 	  onLeave: function(){
+	  	$('body').removeClass('t-contact');
 	  	$('.c-line-2, .c-line-4').removeClass('u-hide');
 	  }
 	});

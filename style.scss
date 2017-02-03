@@ -355,6 +355,7 @@ a{color:inherit}
 	.o-menu{margin:2em 0}
 	&.s--story{background-color: #fff}
 	@include device(sm){width:auto;
+		.t-contact &{margin-left:percentage(1/6)}
 		&.s--project{margin-left:0; width:auto}
 	}
 	@include device (xs){margin-left:0; padding-top:8em}
@@ -635,7 +636,10 @@ a{color:inherit}
 		a{@include fadeInUp; @include anim;}
 	}
 	@include device(sm){
-		a{@include image('asigma-logo-white.svg')}
+		a{@include image('asigma-logo-white.svg');
+			.t-project &{@include image('asigma-logo.svg')}
+			.t-contact &{@include image('asigma-logo.svg')}
+		}
 	}
 	@include device(xs){width: 3em; height: 3em; position: static; margin-bottom:1.5em; padding-left:0.625em;
 		a{@include image('asigma-logo-mark.svg'); 
