@@ -8,7 +8,7 @@
 		<title><?php bloginfo('name'); ?><?php wp_title('-');?></title>
 		<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto:100,400,700" rel="stylesheet">
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri();?>/favicon.ico"/>
-		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css?v0.161">
+		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css?v0.162">
 		<meta content="An advisory firm that combines finance, operations engineering and data analytics to add value to East-African SMEs." name="description">
 		<meta charset="<?php bloginfo('charset');?>" />
 	  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
