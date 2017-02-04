@@ -655,14 +655,14 @@ jQuery(document).ready(function($) {
         if(plot.sold === true){
             plotColor = soldPlotColor;
         }
-        
         status = plot.sold === true ? 'Sold' : 'Available';
         
         labelContent = '<div class="label-content">';
-        labelContent += '<span class="c-plot__title">'+plot.name+'</span>';
-        labelContent += '<span class="status">'+status+'</span><br/>';
+        labelContent += '<h6 class="c-plot__title">'+plot.name+'</h6>';
+        labelContent += '<span>'+status+'</span>';
+        labelContent += '<span>'+plot.area+' Decimals</span>';
         if(plot.price !== 0){
-            labelContent += '<span class="price"><strong>Approx Price:</strong> '+plot.price+'</span>';
+            labelContent += '<span>Est. Price: '+plot.price+'</span>';
         }
         labelContent += '</div>';
         
@@ -788,11 +788,10 @@ jQuery(document).ready(function($) {
             totalArea = 0;
             
             $.each(selectedPlots, function(i, plot){
-                $('<li><span class="c-plot__id">'+plot.name+' ('+plot.area+' decimals)</span><a class="c-pop__close" href="#" class="remove-plot" title="Remove Plot" attr-index="'+i+'"></a></li>').appendTo('ul.c-plots__list');
+                $('<li><span class="c-plot__id">'+plot.name+' ('+plot.area+' Decimals)</span><a class="c-pop__close" href="#" class="remove-plot" title="Remove Plot" attr-index="'+i+'"></a></li>').appendTo('ul.c-plots__list');
                 totalArea += plot.area;
             });
             
-            //$('span.area-sum').html('<strong>Total Area: </strong>' + parseFloat(totalArea).toFixed(2) + ' sqm');
             $('.c-map__meta .o-figure').html(selectedPlots.length);
         }
     }
