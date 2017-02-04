@@ -645,6 +645,7 @@ jQuery(document).ready(function($) {
                 path.push(new google.maps.LatLng(pt.lat, pt.lng));
             });
             plot.area = Math.round(google.maps.geometry.spherical.computeArea(path) * 0.02471576866040);
+            plot.price = getApproxPlotPrice(plot);
             addPlotOnMap(map.map, path, plot);
         });
     }
@@ -660,7 +661,9 @@ jQuery(document).ready(function($) {
         labelContent = '<div class="label-content">';
         labelContent += '<span class="c-plot__title">'+plot.name+'</span>';
         labelContent += '<span class="status">'+status+'</span><br/>';
-        labelContent += '<span class="area"><strong>Area:</strong> '+plot.area+' decimals</span>';
+        if(plot.price !== 0){
+            labelContent += '<span class="price"><strong>Approx Price:</strong> '+plot.price+'</span>';
+        }
         labelContent += '</div>';
         
         var marker = new MarkerWithLabel({
@@ -800,5 +803,27 @@ jQuery(document).ready(function($) {
           bounds.extend(path[i]);
         }
         return bounds.getCenter();
+    }
+    
+    function getApproxPlotPrice(plot){
+        price = 0;
+        switch(plot.area){
+            case 12:
+                price = 'UGX 37,000,000';
+                break;
+            case 13:
+                price = 'UGX 43,333,300';
+                break;
+            case 15:
+                price = 'UGX 50,000,000';
+                break;
+            case 19:
+                price = 'UGX 63,333,300';
+                break;
+            case 20:
+                price = 'UGX 66,666,600';
+                break;
+        }
+        return price;
     }
 });
