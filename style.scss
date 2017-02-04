@@ -908,15 +908,14 @@ a{color:inherit}
 	li{padding-bottom: 0.25em}
 	.c-pop__close{position: static; width: 1.5em;height: 1.5em;}	
 }
-.c-plot__id{font-size: 0.875em; display: inline-block; position: relative; top: -5px; padding-right: 2.5em}
-.c-plot__title{display: block; padding-bottom:0.375em; font-size: 0.75em; font-family: $roboto; text-transform: uppercase; font-weight: 700}
+.c-plot__id{font-size: 0.75em; display: inline-block; position: relative; top: -5px; padding-right: 2.5em}
+.c-plot__title{display: block; padding-bottom:0.75em; font-size: 1.2em; font-family: $roboto; text-transform: uppercase; font-weight: 700}
 .c-team__image{height:15em; background-color:#b2bfe1; background-size:cover; background-position:center; background-repeat:no-repeat; @include image('coffee.jpg');	
 	.boot &{@include anim; @include delay(0.5); @include fadeInUp}
 }
 .c-box{width:100%; height: 100%; margin:0 auto; position:relative;
 	@include device(xlg){width:75%}
 }
-.labels{padding:5px 10px;background:rgba(0,0,0,0.8);color:#FFF;border-radius:3px;height:auto;pointer-events: none;white-space: nowrap;valign:middle;}
-.labels h4{font-size:14px;color:#FFF !important;transition-delay: 0.0s !important;line-height: normal !important;transition-duration: 0.0s !important;}
-.labels span{display: inline-block;margin-top: 5px;}
+.labels{background:rgba(0,0,0,0.8); padding: 0.625em; color:#FFF;border-radius:3px;height:auto;pointer-events: none;white-space: nowrap;valign:middle;}
+.labels span{display:block; padding-bottom:0.375em; font-size:1.2em}
 #map{height: 100%}
