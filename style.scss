@@ -909,9 +909,11 @@ a{color:inherit}
 	.c-pop__close{position: static; width: 1.5em;height: 1.5em;}	
 }
 .c-plot__id{font-size: 0.875em; display: inline-block; position: relative; top: -5px; padding-right: 2.5em}
+.c-plot__title{display: block; padding-bottom:0.375em; font-size: 0.75em; font-family: $roboto; text-transform: uppercase; font-weight: 700}
 .c-team__image{height:15em; background-color:#b2bfe1; background-size:cover; background-position:center; background-repeat:no-repeat; @include image('coffee.jpg');	
 	.boot &{@include anim; @include delay(0.5); @include fadeInUp}
 }
 .c-box{width:100%; height: 100%; margin:0 auto; position:relative;
 	@include device(xlg){width:75%}
 }
+#map{height: 100%;}
