@@ -10,7 +10,7 @@
 
 
 	function form_submit(){
-		if (isset($_POST['form_spam_key']) && $_POST['form_spam_key']==''){
+		if ((!strstr($_POST['txt_message'], 'http://')) && isset($_POST['form_spam_key']) && $_POST['form_spam_key']==''){
 			if(isset($_POST['form_nonce']) || wp_verify_nonce($_POST['form_nonce'], 'form_nonce_key')){
 				if(isset($_POST['txt_name'])){
 					$name = trim($_POST['txt_name']);
@@ -24,14 +24,21 @@
 				if(isset($_POST['txt_message'])){
 					$message = trim($_POST['txt_message']);
 				}
+				
 				$emailto = 'admin@addmaya.com';
-				$body = 'Email: '.$email."\n".'Name: '.$name."\n".'Phone Number: '.$number."\n".'Message: '.$message;
-				$headers = 'From: '.$name.' <'.$emailto.'>' . "\r\n" . 'Reply-To: ' . $email;
-				wp_mail($emailto, 'Asigma Website Comment', $body, $headers);
-				echo $body;	
+				if(isset($_POST['txt_plots'])){
+					$plots = trim($_POST['txt_plots']);
+					$body = 'Email: '.$email."\n".'Name: '.$name."\n".'Phone Number: '.$number."\n".'Plots: '.$plots;
+					$headers = 'From: '.$name.' <'.$emailto.'>' . "\r\n" . 'Reply-To: ' . $email;
+					wp_mail($emailto, 'Mutundwe Hill Estate Reservation', $body, $headers);
+				}
+				else {
+					$body = 'Email: '.$email."\n".'Name: '.$name."\n".'Phone Number: '.$number."\n".'Message: '.$message;
+					$headers = 'From: '.$name.' <'.$emailto.'>' . "\r\n" . 'Reply-To: ' . $email;
+					wp_mail($emailto, 'Asigma Website Comment', $body, $headers);
+				}	
 			}
 			else {
-				print 'Nice Try';
 				exit;
 			}	
 		}

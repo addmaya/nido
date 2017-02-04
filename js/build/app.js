@@ -396,7 +396,7 @@ jQuery(document).ready(function($) {
 		} 
 		else {
 		    $('#form_contact').ajaxForm({
-		        beforeSend: function() {
+		        beforeSend: function() { 
 		            $('#form_contact .o-form__status').html('Sending...');
 		        },
 		        success: function() {
@@ -409,6 +409,14 @@ jQuery(document).ready(function($) {
 		    });
 		}
 	}
+
+	$('.c-map__meta .o-button').click(function() {
+    	var s = '';
+        $.each(selectedPlots, function(i, plot){	
+    		s += plot.name+',';
+    	});
+    	$('#list-plots').val(s);
+    });
     
     function initializeMapFunctions(){
         refreshPlots();
@@ -795,6 +803,7 @@ jQuery(document).ready(function($) {
             $('.c-map__meta .o-figure').html(selectedPlots.length);
         }
     }
+    
     
     function getPolygonCenter(path){
         var bounds = new google.maps.LatLngBounds();

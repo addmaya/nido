@@ -99,9 +99,6 @@
 						<h4>Selected Plots</h4>
 						<span class="o-figure">3</span>
 						<ul class="c-plots__list">
-							<!--<li><span class="c-plot__id">Plot 489 (12 Decimals)</span> <a href="#" class="c-pop__close"></a></li>
-							<li><span class="c-plot__id">Plot 512 (33 Decimals)</span> <a href="#" class="c-pop__close"></a></li>
-							<li><span class="c-plot__id">Plot 301 (20 Decimals)</span> <a href="#" class="c-pop__close"></a></li>-->
 						</ul>
 						<div class="t-dark">
 							<a href="#form_contact" class="o-button">
@@ -171,6 +168,7 @@
 						<input class="o-input--txt" type="text" placeholder="Phone" name="txt_telephone" required>
 					</div>
 					<div class="u-hide">
+						<input type="text" name="txt_plots" id="list-plots" value=""/>
 						<input type="hidden" name="action" value="form_submit"/>
 						<input type="text" name="form_spam_key"/>
 						<?php wp_nonce_field('form_nonce_key','form_nonce');?>
