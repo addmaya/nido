@@ -25,12 +25,12 @@
 					$message = trim($_POST['txt_message']);
 				}
 				
-				$emailto = 'admin@addmaya.com';
+				$emailto = 'info@asigmacapital.com';
 				if(isset($_POST['txt_plots'])){
 					$plots = trim($_POST['txt_plots']);
 					$body = 'Email: '.$email."\n".'Name: '.$name."\n".'Phone Number: '.$number."\n".'Plots: '.$plots;
 					$headers = 'From: '.$name.' <'.$emailto.'>' . "\r\n" . 'Reply-To: ' . $email;
-					wp_mail($emailto, 'Mutundwe Hill Estate Reservation', $body, $headers);
+					wp_mail('sales@asigmacappital.com', 'Mutundwe Hill Estate Reservation', $body, $headers);
 				}
 				else {
 					$body = 'Email: '.$email."\n".'Name: '.$name."\n".'Phone Number: '.$number."\n".'Message: '.$message;
