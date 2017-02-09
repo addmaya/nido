@@ -716,7 +716,7 @@ a{color:inherit}
 		li{float:none; width:auto}
 	}
 }
-%c-tint{background-color: #f4f4ff;
+%c-tint{background-color: #f4f4ff; @include prefix((transition: background-color 0.5s ease));
 	.is-pc &{background-color: #f7f7f7}
 }
 .c-tint{position: absolute; top:0; left: percentage(1/6); width: percentage(5/6); z-index:0; height: 100%; @include prefix((transform-origin:0% 50%)); @extend %c-tint;
