@@ -260,29 +260,33 @@
 	add_filter('wp_handle_upload_prefilter','mdu_validate_image_size');
 	function mdu_validate_image_size( $file ) {
 	    $image = getimagesize($file['tmp_name']);
-	    $minimum = array(
-	        'width' => '960',
-	        'height' => '540'
-	    );
-	    $maximum = array(
-	        'width' => '1920',
-	        'height' => '1080'
-	    );
-	    $image_width = $image[0];
-	    $image_height = $image[1];
+	    if(in_array($file['type'], array('image/png', 'image/gif', 'image/jpeg', 'image/jpg'))){
+		    $minimum = array(
+		        'width' => '960',
+		        'height' => '540'
+		    );
+		    $maximum = array(
+		        'width' => '1920',
+		        'height' => '1080'
+		    );
+		    $image_width = $image[0];
+		    $image_height = $image[1];
 
-	    $too_small = "Image dimensions are too small. Minimum size is {$minimum['width']} by {$minimum['height']} pixels. Uploaded image is $image_width by $image_height pixels.";
-	    $too_large = "Image dimensions are too large. Maximum size is {$maximum['width']} by {$maximum['height']} pixels. Uploaded image is $image_width by $image_height pixels.";
+		    $too_small = "Image dimensions are too small. Minimum size is {$minimum['width']} by {$minimum['height']} pixels. Uploaded image is $image_width by $image_height pixels.";
+		    $too_large = "Image dimensions are too large. Maximum size is {$maximum['width']} by {$maximum['height']} pixels. Uploaded image is $image_width by $image_height pixels.";
 
-	    if ( $image_width < $minimum['width'] || $image_height < $minimum['height'] ) {
-	        $file['error'] = $too_small; 
-	        return $file;
-	    }
-	    elseif ( $image_width > $maximum['width'] || $image_height > $maximum['height'] ) {
-	        $file['error'] = $too_large; 
-	        return $file;
-	    }
-	    else
-	        return $file;
+		    if ( $image_width < $minimum['width'] || $image_height < $minimum['height'] ) {
+		        $file['error'] = $too_small; 
+		        return $file;
+		    }
+		    elseif ( $image_width > $maximum['width'] || $image_height > $maximum['height'] ) {
+		        $file['error'] = $too_large; 
+		        return $file;
+		    }
+		    else
+		        return $file;
+		} else {
+			return $file;
+		}
 	}
 ?>
