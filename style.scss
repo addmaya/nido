@@ -232,7 +232,6 @@ a{color:inherit}
 	}
 }
 .o-line{display: block; height:1px; width: 30%; background-color: $blue;
-	.c-header &{margin-bottom: 0.75em}
 	.o-index &{width: 100%}
 	.t-dark &{background-color: #fff;
 		.o-index &{background-color: #fff;}
@@ -253,7 +252,7 @@ a{color:inherit}
 	.t-dark &{color:white;
 		&:after{background-color:white}
 	}
-	.is-pc &{color: #28375f}
+	.is-pc &{color: #232c44}
 }
 .o-angle{display: inline-block; @include prefix((transform: scaleX(0.5))); font-weight:700; font-size:1.2em}
 .o-arrow{display: inline-block; @include prefix((transition:transform 0.5s $sharpIn));
@@ -330,7 +329,7 @@ a{color:inherit}
 		.s--reserve &{width:auto; float:none; margin-bottom: 1.5em}
 	}
 }
-.o-input--txt{width: 100%; border-bottom:solid 1px #d7e0fb; text-transform: uppercase; font-size: 0.75em; padding-bottom:0.875em; color: $blue; @include prefix((transition: border-bottom-color 0.5s ease));
+.o-input--txt{width: 100%; border-bottom:solid 1px #d7e0fb; text-transform: uppercase; font-size: 0.75em; padding-bottom:0.875em; color: $blue; @include prefix((transition: border-bottom-color 0.5s ease)); font-family: $roboto;
 	&.ta{padding-bottom:0.2em}
 	.s--reserve &{color: #fff}
 	&:focus{border-bottom-color:$blue}
@@ -563,14 +562,14 @@ a{color:inherit}
 	&.u-col-5{
 		.u-wrap{@include delay(1)}
 	}
-	&.u-white{color:white;
-		a{color:white}
-		.o-line{background-color:white}
+	&.u-white{color:white; a{color:white} .o-line{background-color:white}}
+	.is-pc &{color: #232c44; font-size:0.82em;
+		&.u-white{color:white; a{color:white} .o-line{background-color:white}}
 	}
-	.is-pc &{color: #28375f;}
 	@include device(sm){font-size:0.625em}
 	@include device(xs){position: static; margin-bottom: 1.5em; transition:opacity 0.3s ease;}
 }
+
 .o-spinner__prop{position: absolute; top: 50%; left: 50%; @include prefix((transform: translate(-50%, -50%)))}
 .o-spinner__wrap{overflow: visible; padding-top: 2em; height: 0; width: 2em; @extend .o-spinner__prop; z-index:0}
 .o-spinner{@extend .o-spinner__prop; height: 0; width: 0; box-sizing: border-box; border: 0 solid #FE665C; border-radius: 50%; @include spinner}
@@ -718,7 +717,7 @@ a{color:inherit}
 	}
 }
 %c-tint{background-color: #f4f4ff;
-	.is-pc{background-color: #f8f8f9}
+	.is-pc{background-color: #f8f6ff}
 }
 .c-tint{position: absolute; top:0; left: percentage(1/6); width: percentage(5/6); z-index:0; height: 100%; @include prefix((transform-origin:0% 50%)); @extend %c-tint;
 	.boot &{@include scaleInLeft; @include anim}
@@ -805,6 +804,9 @@ a{color:inherit}
 		}
 		.o-social{position: static; margin-bottom: 1.5em}
 		.o-line{display:none}
+	}
+	.o-line{margin-bottom: 0.75em; opacity:0.5;
+		.t-dark &{opacity:1}
 	}
 }
 .c-features{margin: 2em 0}

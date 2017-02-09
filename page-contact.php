@@ -29,7 +29,7 @@
 				<div class="u-g2-2">
 					<div class="u-pl">
 						<div class="o-form__ele last">
-							<textarea class="o-input--txt ta u-small-caps" name="txt_message" cols="30" rows="10" placeholder="Message" required></textarea>
+							<textarea class="o-input--txt ta u-small-caps" name="txt_message" cols="30" rows="11" placeholder="Message" required></textarea>
 						</div>
 						
 						<button class="o-button js-submit-contact">
