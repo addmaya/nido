@@ -172,7 +172,7 @@ h4{font-size: 0.75em; font-family: $roboto; text-transform: uppercase; font-weig
 p{line-height: 1.5}
 a{color:inherit}
 .o-menu{text-transform: uppercase; font-size:0.70em; color: $blue; padding:1em; @include prefix((transition:color 0.5s ease));
-	.o-page-thumb &{color: white}
+	div.o-page-thumb &{color: white}
 	&.inline{display:inline-block; padding:0}
 	.t-dark &{color:white}
 	i{vertical-align: super; display: inline-block; font-size: 0.625em; padding-left:0.2em}
@@ -499,7 +499,7 @@ a{color:inherit}
 }
 .o-service__desc{margin-bottom: 1em; width:percentage(2/3); float: right;
 	.o-line{margin-top:2em; background-color:#b7b7d7}
-	p{background-color: #f4f4ff;}
+	p{@extend %c-tint}
 	@include device(xs){width:auto; float:none;
 		p{background-color: transparent}
 	}
@@ -621,7 +621,7 @@ a{color:inherit}
 }
 .c-brief{padding-bottom:2.5em;
 	h2{font-size:1.3em; padding:2em 0 1em; color: $blue}
-	p{@extend .u-copy; background-color: #f4f4ff}
+	p{@extend .u-copy; @extend %c-tint}
 	.boot &{@include anim; @include fadeInUp; @include delay(1.1)}
 	@include device(xs){
 		p{background-color:transparent;}
@@ -716,7 +716,10 @@ a{color:inherit}
 		li{float:none; width:auto}
 	}
 }
-.c-tint{background-color:#F4F4FF; position: absolute; top:0; left: percentage(1/6); width: percentage(5/6); z-index:0; height: 100%; @include prefix((transform-origin:0% 50%));
+%c-tint{background-color: #f4f4ff;
+	.is-pc{background-color: #f8f8f9}
+}
+.c-tint{position: absolute; top:0; left: percentage(1/6); width: percentage(5/6); z-index:0; height: 100%; @include prefix((transform-origin:0% 50%)); @extend %c-tint;
 	.boot &{@include scaleInLeft; @include anim}
 	&.s--single{background-color:#fff}
 	@include device(xs){display:none}
