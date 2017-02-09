@@ -87,11 +87,13 @@
 			<h4 class="u-wrap">Reserve Plot(s)</h4>
 			<section class="u-wrap u-clear">
 				<div class="u-half">
-					<p class="s--reset">Use the Interactive below map to select and reserve plots on the Mutundwe Hill Estate. Plots marked red are sold.</p>
+					<p class="s--reset">Use the Interactive below map to select and reserve plots on the Mutundwe Hill Estate. Plots marked red are sold. On Mobile, use 2 fingers to navgiate Map</p>
 				</div>
 			</section>			
 			<div class="c-map u-clear">
+
 				<div class="c-map__geo">
+					<div class="o-spinner__wrap"><div class="o-spinner"></div></div>
 					<?php echo do_shortcode('[plots]') ?> 
 				</div>
 				<div class="c-map__meta">

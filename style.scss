@@ -20,6 +20,7 @@ Author URI: http://addmaya.com/
   @else if $device == md{@media only screen and (max-width: 1200px){@content}}
   @else if $device == lg{@media only screen and (max-width: 1600px){@content}}
   @else if $device == xlg{@media only screen and (min-width:2000px){@content}}
+
 }
 @mixin prefix($map, $vendors: webkit moz ms o) {
   @each $prop, $value in $map {
@@ -54,7 +55,9 @@ $sharpIn: cubic-bezier(0.03, 0.45, 0.25, 1);
 .u-pl{padding-left:1em;
 	@include device(xs){padding-left:0}
 }
-.u-half{width: 50%}
+.u-half{width: 50%;
+	@include device(xs){width: 100%}
+}
 .u-pdb-3em{padding-bottom:3em}
 .u-mb{margin-bottom:4em}
 .u-mt{margin-top: 3em}
@@ -64,6 +67,7 @@ $sharpIn: cubic-bezier(0.03, 0.45, 0.25, 1);
 }
 .u-copy{color: #555E76; line-height:1.8; font-size:0.875em;
 	.t-dark &{color: #b0bbdc}
+	.is-pc &{color: #16181d}
 }
 .u-yingyang{@extend .u-clear; width:percentage(4/6); margin-left:percentage(1/6); height: auto;
 	.o-content &{width: 100%; margin-left:0}
@@ -173,6 +177,7 @@ a{color:inherit}
 	.t-dark &{color:white}
 	i{vertical-align: super; display: inline-block; font-size: 0.625em; padding-left:0.2em}
 	.boot &{@include anim; @include fadeInLeft; @include delay(0.8)}
+	.is-pc &{color: #28375f}
 }
 .o-menu__item{
 	a{display: block; padding:0.6em 0; position: relative;
@@ -247,6 +252,7 @@ a{color:inherit}
 	.t-dark &{color:white;
 		&:after{background-color:white}
 	}
+	.is-pc &{color: #28375f}
 }
 .o-angle{display: inline-block; @include prefix((transform: scaleX(0.5))); font-weight:700; font-size:1.2em}
 .o-arrow{display: inline-block; @include prefix((transition:transform 0.5s $sharpIn));
@@ -365,7 +371,9 @@ a{color:inherit}
 	@include device (xs){margin-left:0; padding-top:8em}
 }
 .o-content__header{width:percentage(2/3); position: relative; padding-bottom: 2em;
-	h1{color: $blue}
+	h1{color: $blue;
+		.is-pc &{color: #28375f}
+	}
 	p{@extend .u-copy}
 	.s--project &{width: 50%; float: left}
 	.boot &{@include anim; @include fadeInUp; @include delay(0.9)}
@@ -542,7 +550,7 @@ a{color:inherit}
 .o-contacts{position: absolute; font-family: $playfair; font-size:0.75em; line-height:1.5;z-index:2; overflow: hidden; transition:color 0.5s ease; color: $blue;
 	a{display: block}
 	p{line-height:1.5}
-	.t-dark &, .is-open &{color: #fff;
+	body.t-dark &, .is-open &{color: #fff;
 		a{color: white}
 	}
 	.boot &{
@@ -558,9 +566,13 @@ a{color:inherit}
 		a{color:white}
 		.o-line{background-color:white}
 	}
+	.is-pc &{color: #28375f;}
 	@include device(sm){font-size:0.625em}
 	@include device(xs){position: static; margin-bottom: 1.5em; transition:opacity 0.3s ease;}
 }
+.o-spinner__prop{position: absolute; top: 50%; left: 50%; @include prefix((transform: translate(-50%, -50%)))}
+.o-spinner__wrap{overflow: visible; padding-top: 2em; height: 0; width: 2em; @extend .o-spinner__prop; z-index:0}
+.o-spinner{@extend .o-spinner__prop; height: 0; width: 0; box-sizing: border-box; border: 0 solid #FE665C; border-radius: 50%; @include spinner}
 
 /*components*/
 #barba-wrapper, .barba-container{width: 100%; height: 100%}
@@ -582,7 +594,9 @@ a{color:inherit}
 	@include device(sm){display:none;
 		.t-dark &{display: block}
 	}
-	@include device(xs){display:none}
+	@include device(xs){display:none;
+		.t-dark &{display: none}
+	}
 }
 @for $i from 0 through 5 {
 	.c-line-#{$i}{left: percentage($i/6); @extend .c-grid__line;
@@ -661,8 +675,9 @@ a{color:inherit}
 	.o-index{@include prefix((transform:scale(1,1))); opacity: 0.7}
 	@include device(xs){display:none}
 }
-.c-hotspots__item{position: absolute; width:percentage(1/6); top:0; overflow: hidden; opacity:0.5; @include prefix((transition:opacity 0.5s ease));
-	&:hover, &.is-active{opacity:1}
+.c-hotspots__item{position: absolute; width:percentage(1/6); top:0; overflow: hidden; opacity:0.4; @include prefix((transition:opacity 0.5s ease));
+	&:hover{opacity:1}
+	&.is-active{opacity:1}
 	@include device(sm){
 		h3{font-size:1.2em}
 	}
@@ -670,12 +685,15 @@ a{color:inherit}
 .c-hotspots__item__title{position: relative; display: block; font-size:0.5em; width:92%; padding: 1.5em 0; color: white;
 	&:after{content:""; bottom: 13px; position: absolute; height: 1px; background-color: white; width: 100%; left: 20px; @include prefix((transform-origin:0% 50%)); @include prefix((transform:scale(0,1))); @include prefix((transition: transform 0.5s cubic-bezier(0, 0.55, 0.27, 0.99)))}
 	&:hover{
-		&:after{@include prefix((transform:scale(1,1)))}
+		.u-wrap{@include prefix((transform: translateX(3%)));
+			.is-active &{@include prefix((transform: translateX(0%)))}
+		}
 	}
+	.u-wrap{@include prefix((transition: transform 0.3s ease))}
 	.boot &{@include anim; @include fadeIn}
 }
 .o-line--hotspot{bottom: 13px; position: absolute; height: 1px; background-color: white; width: 100%; left: 20px; @include prefix((transform-origin:100% 50%)); @include prefix((transform:scale(0,1))); @include prefix((transition: transform 0.5s cubic-bezier(0, 0.55, 0.27, 0.99)));
-	&.is-animating{@include prefix((transition-delay:0.5s)); @include prefix((transition-duration:7s)); @include prefix((transform:scale(1,1))); @include prefix((transition-timing-function: linear)); @include prefix((transform-origin:0% 50%))}
+	&.is-animating{@include prefix((transition-delay:0.2s)); @include prefix((transition-duration:7s)); @include prefix((transform:scale(1,1))); @include prefix((transition-timing-function: linear)); @include prefix((transform-origin:0% 50%))}
 }
 .c-hotspots__item__content{display:none; height: 100%; width:200%; margin-left: 80%; background-color:purple; position: relative; z-index:4; background-size: cover; background-position:center; color: $blue;
 	.u-table{height: 100%; background-color: rgba(255, 255, 255, 0.8)}
@@ -755,10 +773,8 @@ a{color:inherit}
 		}
 		&:after{content:""; position: absolute; top:40%; height: 1px; background-color:$blue; width: 20%; left:-15px; @include prefix((transform-origin:0% 0%)); @include prefix((transform:scale(0,1))); @include prefix((transition:transform 0.5s ease))}
 	}
-	.t-dark &, .is-open &{color: #fff;
-		a{
-			&:after{background-color: #fff}
-		}
+	body.t-dark &, .is-open &{color: #fff;
+		a{&:after{background-color: #fff}}
 	}
 	&.is-active{
 		.c-menu__item__title{@include prefix((transform:translateX(12px)))}
@@ -771,6 +787,7 @@ a{color:inherit}
 			a:after{@include prefix((transform:scale(0,1)))}
 		}
 	}
+	.is-pc &{color: #28375f}
 	
 }
 .c-menu__item__title{display: inline-block; @include prefix((transition:transform 0.8s $sharpIn))}
@@ -889,10 +906,11 @@ a{color:inherit}
 .c-map{background-color: $blue; margin-top: 2em; height: 540px; position: relative;
 	@include device(xs){height:auto}
 }
-.c-map__geo{background-color:#f5f5f5; width: percentage(3/4); float: left; height: 100%;
-	#map-data{opacity: 0}
+.c-map__geo{background-color:#f5f5f5; width: percentage(3/4); float: left; height: 100%; position: relative; z-index:2;
+	#map-data{display: none}
+	#map{height: 100%; z-index: 2}
 	@include device(sm){width: percentage(4/6)}
-	@include device(xs){width: auto; float:none; height:200px}
+	@include device(xs){width: auto; float:none; height:480px}
 }
 .c-map__meta{background-color: $blue; width:percentage(1/4); float: left; height:100%; color: #fff; overflow: scroll;
 	.o-line{background-color: #fff; margin: 2em 0; opacity: 0.15}
@@ -918,4 +936,3 @@ a{color:inherit}
 }
 .labels{background:rgba(0,0,0,0.8); padding: 0.75em; color:#FFF;border-radius:3px;height:auto;pointer-events: none;white-space: nowrap;valign:middle;}
 .labels span{display:block; padding-bottom:0.375em; font-size:1.2em}
-#map{height: 100%}

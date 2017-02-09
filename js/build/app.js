@@ -1,5 +1,9 @@
 jQuery(document).ready(function($) {
 	
+	if (navigator.appVersion.indexOf("Mac")!=-1) {
+		$("html").addClass("is-pc");
+	}
+
 	//fetch ajax posts
 	var p = parseInt(posts_page);
     
@@ -289,17 +293,26 @@ jQuery(document).ready(function($) {
 	scrollToHash();
 	resetImageWrap();
 
-	$('.o-button--video').click(function(e){
-		e.preventDefault();
+	$('body').on('click', '.o-button--video', function(event) {
+		event.preventDefault();
 		$('body').addClass('u-oh');
 		$('.c-pop').show();
 	    $('.c-pop__box .u-canvas').html('<iframe id=ytplayer type=text/html src=https://www.youtube.com/embed/aixSUf0c7Cc?autoplay=1></iframe>');
 	    return false;
 	});
 
-	$('.c-pop__close').click(function(e) {
-		e.preventDefault();
+	//video pop
+	$('body').on('click', '.c-pop .c-pop__close', function(event) {
+		event.preventDefault();
 		closePop();
+	});
+
+	$('body').on('click', '.c-pop', function() {
+		closePop();
+	});
+
+	$('body').on('click', '.c-pop .c-pop__box', function() {
+		e.stopPropagation();
 	});
 
 	function closePop(){
@@ -307,14 +320,6 @@ jQuery(document).ready(function($) {
 		$('.c-pop__box .u-canvas').html('');
 		$('.c-pop').hide();
 	}
-
-	$('.c-pop').click(function() {
-		closePop();
-	});
-
-	$('.c-pop .c-pop__box').click(function(e) {
-		e.stopPropagation();
-	});
 
 	$('.js-top').click(function() {
 		$("html, body").animate({ scrollTop: 0 }, "slow");
@@ -432,7 +437,7 @@ jQuery(document).ready(function($) {
             });
         }
         
-        $('body').on('click', 'a.c-pop__close', function(){
+        $('body').on('click', '.c-map .c-pop__close', function(){
             plotIndex = $(this).attr('attr-index');
             removePlot(plotIndex);
             return false;
