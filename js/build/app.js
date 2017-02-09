@@ -1,8 +1,9 @@
 jQuery(document).ready(function($) {
 	
-	if (navigator.appVersion.indexOf("Mac")!=-1) {
+	if (navigator.appVersion.indexOf("Win")!=-1) {
 		$("html").addClass("is-pc");
 	}
+
 
 	//fetch ajax posts
 	var p = parseInt(posts_page);
