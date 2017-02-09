@@ -4,6 +4,7 @@ jQuery(document).ready(function($) {
 		$("html").addClass("is-pc");
 	}
 
+
 	//fetch ajax posts
 	var p = parseInt(posts_page);
     

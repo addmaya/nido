@@ -158,6 +158,7 @@ html{width: 100%; min-height:100%; position: relative;
 body{width:100%; height: 100%; font-family: $roboto; background-color: #FFF; @include prefix((transition: background-color 0.5s ease));
 	&.t-dark{background-color:#fff;}
 	&.u-oh{overflow: hidden}
+	.is-pc &{text-rendering:optimizeLegibility;}
 }
 h1{font-size: 2em; font-family: $playfair; line-height:1.5;
 	@include device(sm){font-size:1.8em}
