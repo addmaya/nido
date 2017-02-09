@@ -501,7 +501,7 @@ a{color:inherit}
 	.o-line{margin-top:2em; background-color:#b7b7d7}
 	p{@extend %c-tint}
 	@include device(xs){width:auto; float:none;
-		p{background-color: transparent}
+		p{background-color: transparent !important}
 	}
 }
 .o-subtitle{font-family: $roboto; color: $grey-copy; text-transform: uppercase; font-size: 0.7em; display: block;
@@ -624,7 +624,7 @@ a{color:inherit}
 	p{@extend .u-copy; @extend %c-tint}
 	.boot &{@include anim; @include fadeInUp; @include delay(1.1)}
 	@include device(xs){
-		p{background-color:transparent;}
+		p{background-color:transparent !important;}
 	}
 }
 .c-story{color: #575b64;
@@ -795,7 +795,8 @@ a{color:inherit}
 }
 .c-menu__item__title{display: inline-block; @include prefix((transition:transform 0.8s $sharpIn))}
 .c-header{padding-top:1.5em; position: absolute; z-index:40; width: 100%;
-	@include device(xs){padding-top:1em; height: 3em; overflow:hidden; @include prefix((transition:height 0.5s ease));
+	@include device(xs){padding-top:1em; height: 3em; overflow:hidden; @include prefix((transition:height 0.5s ease)); position: fixed; background-color: #fff; 
+		.t-dark &{background-color: transparent} 
 		&:after{content:""; top:0; left:0; position: absolute; z-index:-1; @include prefix((transform-origin:0% 0%)); width: 100%; height: 100%; background-color:darken($blue, 10%); @include prefix((transform:scale3d(1,0,1))); @include prefix((transition: transform 0.6s ease));
 		}
 		&.is-open{height:100%; 
