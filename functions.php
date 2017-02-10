@@ -289,4 +289,9 @@
 			return $file;
 		}
 	}
+
+	function extract_yt_id($url){
+        parse_str(parse_url($url, PHP_URL_QUERY ), $yt_id);
+        return $yt_id['v'];  
+    }
 ?>

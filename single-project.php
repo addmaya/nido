@@ -1,4 +1,10 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+<?php 
+	$title_1 = get_field('neigbourhood_title');
+	$title_2 = get_field('facilities_title');
+	$title_3 = get_field('reserve_plots_title');
+	$title_4 = get_field('pricing_title');
+ ?>
 <div class="c-pop">
 	<div class="u-table">
 		<div class="u-cell">
@@ -21,10 +27,10 @@
 						<?php echo apply_filters('the_content', get_field('mhe_summary')); ?>
 					</div>
 					<ul class="o-menu">
-						<li class="o-menu__item"><a href="#sect-1"><span>Neighbourhood</span></a></li>
-						<li class="o-menu__item"><a href="#sect-2"><span>Planned Facilities</span></a></li>
-						<li class="o-menu__item"><a href="#sect-3"><span>Interactive Map</span></a></li>
-						<li class="o-menu__item"><a href="#sect-4"><span>Reserve a Plot</span></a></li>
+						<li class="o-menu__item"><a href="#sect-1"><span><?php echo $title_1; ?></span></a></li>
+						<li class="o-menu__item"><a href="#sect-2"><span><?php echo $title_2; ?></span></a></li>
+						<li class="o-menu__item"><a href="#sect-3"><span><?php echo $title_3; ?></span></a></li>
+						<li class="o-menu__item"><a href="#sect-4"><span><?php echo $title_4; ?></span></a></li>
 					</ul>
 				</section>
 			</header>
@@ -32,7 +38,7 @@
 				<figure class="c-hero js-lazy" data-thumb="<?php echo get_post_thumb(); ?>">
 					<div class="u-table">
 						<div class="u-cell">
-							<a href="#" class="o-button--video"></a>
+							<a href="#" class="o-button--video" data-video="<?php echo extract_yt_id(get_field('youtube_video')); ?>"></a>
 						</div>
 					</div>
 				</figure>
@@ -46,7 +52,7 @@
 				<div class="u-col">
 					<div class="u-wrap">
 						<section>
-							<h4>Neighbourhood</h4>
+							<h4><?php echo $title_1; ?></h4>
 							<?php echo apply_filters('the_content', get_field('mhe_neigh')); ?>
 							<div class="o-list u-reset">
 								<ul>
@@ -68,7 +74,7 @@
 			<div class="u-grid-2col">
 				<div class="u-col">
 					<section class="u-wrap">
-						<h4>Planned Facilities</h4>
+						<h4><?php echo $title_2; ?></h4>
 						<?php echo apply_filters('the_content', get_field('mhe_facilities')); ?>
 						<span class="o-line"></span>
 					</section>
@@ -84,7 +90,7 @@
 			</div>
 		</section>
 		<section class="o-content__section" id="sect-3">
-			<h4 class="u-wrap">Reserve Plot(s)</h4>
+			<h4 class="u-wrap"><?php echo $title_3; ?></h4>
 			<section class="u-wrap u-clear">
 				<div class="u-half">
 					<p class="s--reset">Use the Interactive below map to select and reserve plots on the Mutundwe Hill Estate. Plots marked red are sold. On Mobile, use 2 fingers to navigate the Map</p>
@@ -123,7 +129,7 @@
 			</div>
 		</section>
 		<section class="o-content__section" id="sect-4">
-			<h4 class="u-wrap">Pricing</h4>
+			<h4 class="u-wrap"><?php echo $title_4; ?></h4>
 			<div class="u-grid-2col">
 				<div class="u-col">
 					<ul class="c-features">

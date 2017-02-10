@@ -45,24 +45,33 @@
 		<?php remove_editor_styles(); the_content(); ?>
 	</section>
 	<footer class="o-content__footer">
-		<?php $author = get_field('asg_author'); ?>
-		<?php if ($author): 
-			$post = $author;
-			setup_postdata($post);
-		?>
-			<div class="c-author u-wrap">
-				<figure style="background-image:url(<?php the_field('photo'); ?>)"></figure>
-				<span class="c-author__name"><?php the_title(); ?></span>
-				<span class="o-subtitle"><?php the_field('title'); ?></span>
+		<div class="u-clear">
+			<div class="c-authors">
+			<?php
+				$authors = get_field('asg_authors');
+				foreach ($authors as $author) {
+					$writer = $author['asg_writer']; 
+					if($writer){
+						$post = $writer;
+						setup_postdata($writer);
+					}
+			?>
+				<div class="c-author">
+					<section class="u-wrap">
+						<figure style="background-image:url(<?php the_field('photo'); ?>)"></figure>
+						<span class="c-author__name"><?php the_title(); ?></span>
+						<span class="o-subtitle"><?php the_field('title'); ?></span>
+					</section>
+				</div>	
+			<?php } wp_reset_postdata(); ?>
 			</div>
-		<?php wp_reset_postdata();?>
-		<?php endif ?>
-		<div class="o-social">
-			<div class="u-wrap">
-				<span class="o-line"></span>
-				<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" class="o-social__fb"><span></span></a>
-				<a target="_blank" href="https://twitter.com/home?status=<?php the_permalink(); ?>" class="o-social__tw"><span></span></a>
-				<a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&summary=&source=" class="o-social__ldn"><span></span></a>
+			<div class="o-social">
+				<div class="u-wrap">
+					<span class="o-line"></span>
+					<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" class="o-social__fb"><span></span></a>
+					<a target="_blank" href="https://twitter.com/home?status=<?php the_permalink(); ?>" class="o-social__tw"><span></span></a>
+					<a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>&title=<?php the_title(); ?>&summary=&source=" class="o-social__ldn"><span></span></a>
+				</div>
 			</div>
 		</div>
 		<?php Starkers_Utilities::get_template_parts(array('parts/shared/next-previous'));?>

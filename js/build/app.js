@@ -295,9 +295,10 @@ jQuery(document).ready(function($) {
 
 	$('body').on('click', '.o-button--video', function(event) {
 		event.preventDefault();
+		var v = $(this).data('video');
 		$('body').addClass('u-oh');
 		$('.c-pop').show();
-	    $('.c-pop__box .u-canvas').html('<iframe id=ytplayer type=text/html src=https://www.youtube.com/embed/aixSUf0c7Cc?autoplay=1></iframe>');
+	    $('.c-pop__box .u-canvas').html('<iframe id=ytplayer type=text/html src=https://www.youtube.com/embed/'+v+'?autoplay=1></iframe>');
 	    return false;
 	});
 
