@@ -927,6 +927,7 @@ a{color:inherit}
 	h4{color:white; padding:1.5em 0 2em}
 	p{color:white; margin: 0;
 		a{display: block;}
+		.is-pc &{color:white;}
 	}
 	.o-button{padding-left: 0; margin-top: 1em}
 	@include device(sm){width: percentage(2/6)}
