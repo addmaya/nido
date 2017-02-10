@@ -643,7 +643,7 @@ jQuery(document).ready(function($) {
           div: '#map',
           lat: 0.28139986747911,
           lng: 32.529698989423,
-          mapType: 'satellite',
+          mapType: 'hybrid',
           scrollwheel: false
         });
         
