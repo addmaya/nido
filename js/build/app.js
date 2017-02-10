@@ -328,6 +328,10 @@ jQuery(document).ready(function($) {
 	function resetImageWrap(){
 		$('.alignnone').closest('p').addClass('s--reset');
 		$('.highcharts-iframe').closest('p').addClass('s--reset');
+		$('.wp-caption').css({
+			width: 'auto',
+			height: 'auto'
+		});
 	}
 	function submitContact(){
 		if (!Modernizr.input.placeholder) {
