@@ -637,7 +637,7 @@ a{color:inherit}
 	.boot &{@include anim; @include fadeIn; @include delay(1.5)}
 	h1{color: $blue; padding:0.3em 0.3em 1em}
 	h2{font-size:1.3em; padding:0em 0.4em 1em; color:#8b8055;}
-	h3{font-size:0.875em; padding:2em 0.625em 1em; color: $blue}
+	h3{font-size:0.875em; padding:2em 0.625em 1em; }
 	li{padding-bottom: 0.625em; font-family: 'Georgia', serif; font-style: italic}
 	ul,ol{padding: 0 2em 2em; line-height:2; font-size:0.95em}
 	ul{list-style: circle outside}
