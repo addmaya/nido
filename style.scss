@@ -77,7 +77,9 @@ $sharpIn: cubic-bezier(0.03, 0.45, 0.25, 1);
 .u-ying{color: #fff; height: 100%; position: relative; width:50%; float: left;
 	.u-wrap{padding-top:7em; position: relative; z-index:2}
 	.o-line{transform-origin:0% 50%; background-color: #FFF}
-	p{@extend .u-copy; color:#b9c2dc}
+	p{@extend .u-copy; color:#b9c2dc;
+		.is-pc &{color: #b9c2dc;}
+	}
 	&:before{position: fixed; background-color: $blue; z-index:0; width:percentage(2/6); top:0; height: 100%; content:""; transform-origin:0% 0%;
 		@include device(xlg){width:25%}
 	}
@@ -495,13 +497,20 @@ a{color:inherit}
 .o-meta__item{display: inline-block; margin-right:0.75em; margin-bottom: 0.625em; position: relative;
 	&:after{content:"/"; padding-left:0.75em}
 }
-.o-service__thumb{height:16em; background-color:#9aa9d3; margin-bottom: 3em; position: relative; background-size:cover; float: left; width:percentage(1/3);
-	span{display: inline-block; position: absolute; bottom:-10%; color: #fff; background-color: $blue; padding:1.5em 1em; font-family: $playfair; font-size:1.2em; line-height: 1.5}
+.o-service{@extend .u-clear}
+.o-service__meta{width:percentage(1/3); float: left;
+	@include device(xs){width:auto; float:none}
+}
+.o-service__info{width:percentage(2/3); float: right;
+	@include device(xs){width:auto; float:none}
+}
+.o-service__title{display: block; color: #fff; background-color: $blue; padding:1.5em 1em; font-family: $playfair; font-size:1.2em; line-height: 1.5}
+.o-service__thumb{height:16em; background-color:#9aa9d3; position: relative; background-size:cover;
 	@include device(xs){margin-right:0; width: auto; float:none}
 }
-.o-service__desc{margin-bottom: 1em; width:percentage(2/3); float: right;
+.o-service__desc{
 	.o-line{margin-top:2em; background-color:#b7b7d7}
-	p{@extend %c-tint}
+	p{@extend %c-tint; padding-top: 1.5em; padding-bottom: 3em}
 	@include device(xs){width:auto; float:none;
 		p{background-color: transparent !important}
 	}
@@ -709,7 +718,7 @@ a{color:inherit}
 	.u-cell{vertical-align: middle}
 }
 .c-services{margin:2em 0; @extend .u-clear;
-	li{margin-bottom: 2em; overflow: hidden;
+	li{overflow: hidden;
 		&:last-child{margin-bottom:0}
 		@for $i from 1 through 3 {
 			&:nth-child(#{$i}){
