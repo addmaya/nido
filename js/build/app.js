@@ -4,6 +4,16 @@ jQuery(document).ready(function($) {
 		$("html").addClass("is-pc");
 	}
 
+	function setHeight() {
+	    windowHeight = $(window).innerHeight();
+	    $('.c-tint').css('min-height', windowHeight);
+	  };
+	  setHeight();
+	  
+	  $(window).resize(function() {
+	    setHeight();
+	  });
+
 	//fetch ajax posts
 	var p = parseInt(posts_page);
     
