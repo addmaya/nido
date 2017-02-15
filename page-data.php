@@ -41,17 +41,17 @@
 			?>
 				<li>
 					<article class="o-service">
-						<figure class="o-service__thumb js-lazy" data-thumb="<?php echo $service_thumb;?>">
-							<span>
-								<?php echo $service_title; ?>
-							</span>
-						</figure>
-						<section class="o-service__desc">
-							<div class="u-wrap">
-								<p><?php echo $service_desc; ?></p>
-								<span class="o-line"></span>
-							</div>
-						</section>
+						<div class="o-service__meta">
+							<span class="o-service__title"><?php echo $service_title; ?></span>
+						</div>
+						<div class="o-service__info">
+							<figure class="o-service__thumb js-lazy" data-thumb="<?php echo $service_thumb;?>"></figure>
+							<section class="o-service__desc">
+								<div class="u-wrap">
+									<p><?php echo $service_desc; ?></p>
+								</div>
+							</section>
+						</div>						
 					</article>	
 				</li>
 			<?php endforeach ?>

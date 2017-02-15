@@ -4,7 +4,7 @@ jQuery(document).ready(function($) {
 		$("html").addClass("is-pc");
 	}
 
-	function setHeight() {
+		function setHeight() {
 	    windowHeight = $(window).innerHeight();
 	    $('.c-tint').css('min-height', windowHeight);
 	  };
@@ -305,9 +305,10 @@ jQuery(document).ready(function($) {
 
 	$('body').on('click', '.o-button--video', function(event) {
 		event.preventDefault();
+		var v = $(this).data('video');
 		$('body').addClass('u-oh');
 		$('.c-pop').show();
-	    $('.c-pop__box .u-canvas').html('<iframe id=ytplayer type=text/html src=https://www.youtube.com/embed/aixSUf0c7Cc?autoplay=1></iframe>');
+	    $('.c-pop__box .u-canvas').html('<iframe id=ytplayer type=text/html src=https://www.youtube.com/embed/'+v+'?autoplay=1></iframe>');
 	    return false;
 	});
 
@@ -652,7 +653,7 @@ jQuery(document).ready(function($) {
           div: '#map',
           lat: 0.28139986747911,
           lng: 32.529698989423,
-          mapType: 'satellite',
+          mapType: 'hybrid',
           scrollwheel: false
         });
         
