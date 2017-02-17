@@ -17,9 +17,6 @@
 					<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php time_ago(); ?></time>
 				</li>
 				<li class="o-meta__item">
-					<span><?php the_author(); ?></span>
-				</li>
-				<li class="o-meta__item">
 					<?php the_category(); ?>
 				</li>
 			</ul>

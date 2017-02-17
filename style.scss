@@ -157,8 +157,12 @@ $sharpIn: cubic-bezier(0.03, 0.45, 0.25, 1);
 html{width: 100%; min-height:100%; position: relative;
 	&.u-height{height:100%}
 }
-body{width:100%; height: 100%; font-family: $roboto; background-color: #FFF; @include prefix((transition: background-color 0.5s ease));
-	&.t-dark{background-color:#fff;}
+body{width:100%; height: 100%; font-family: $roboto; background-color: #fff; @include prefix((transition: background-color 0.5s ease));
+	&.t-dark{background-color:#fff;
+		@include device(xlg){background-color:#111d3d;position: relative;
+			&:after{content:""; position: fixed; height:100%; width:percentage(1/6); right: 0; top:0; background-color:#263868; z-index:-2; @include prefix((transform-origin: 100% 0%))}
+		}
+	}
 	&.u-oh{overflow: hidden}
 	.is-pc &{text-rendering:optimizeLegibility;}
 }
@@ -499,6 +503,9 @@ a{color:inherit}
 .o-meta{text-transform: uppercase; font-size: 0.625em; margin-bottom: 0.75em; opacity:0.6}
 .o-meta__item{display: inline-block; margin-right:0.75em; margin-bottom: 0.625em; position: relative;
 	&:after{content:"/"; padding-left:0.75em}
+	&:last-child{
+		&:after{content: "-";}
+	}
 }
 .o-service{@extend .u-clear}
 .o-service__meta{width:percentage(1/3); float: left;
@@ -687,8 +694,8 @@ a{color:inherit}
 	}
 	@include device(xs){width: 3em; height: 3em; position: static; margin-bottom:1.5em; padding-left:0.625em;
 		a{@include image('asigma-logo-mark.svg'); 
-			.t-dark &, .is-open &{@include image('asigma-logo-mark-white.svg')}
-			.t-project &{@include image('asigma-logo-mark.svg')}
+			.t-dark &, header.is-open &{@include image('asigma-logo-mark-white.svg')}
+			.t-project &{@include image('asigma-logo-mark.svg');}
 		}
 	}
 }
@@ -741,7 +748,7 @@ a{color:inherit}
 %c-tint{background-color: #f4f4ff; @include prefix((transition: background-color 0.5s ease));
 	.is-pc &{background-color: #edf2f9; }
 }
-.c-tint{position: absolute; top:0; left: percentage(1/6); width: percentage(5/6); z-index:0; height: 100%; @include prefix((transform-origin:0% 50%)); @extend %c-tint;
+.c-tint{position: fixed; top:0; left: percentage(1/6); width: percentage(5/6); z-index:0; height: 100%; @include prefix((transform-origin:0% 50%)); @extend %c-tint;
 	.boot &{@include scaleInLeft; @include anim}
 	&.s--single{background-color:#fff}
 	@include device(sm){left: percentage(2/6); width:percentage(4/6); @include prefix((transition: left 0.5s ease));
@@ -759,9 +766,9 @@ a{color:inherit}
 .c-author{width: 50%; float: left; margin-bottom:1.5em;
 	figure{width:4.5em; height: 4.5em; background-color: $blue; margin-bottom: 1em; background-size:cover; background-repeat:no-repeat; background-position:center}
 	span{display: block}
-	@include device(xs){padding-left:0.625em; padding-bottom:1.5em;}
+	@include device(xs){padding-left:0.625em; padding-bottom:0.5em; width: 40%}
 }
-.c-author__name{font-family: $playfair; color: $grey-copy; font-size:1em; margin-bottom: 0.5em}
+.c-author__name{font-family: $playfair; color: $grey-copy; font-size:1em; margin-bottom: 0.5em; line-height:1.2}
 .c-menu{position: absolute; left: percentage(3/6); text-transform: uppercase; overflow: hidden;
 	.boot &{
 		.u-wrap{@include anim; @include fadeInLeft; @include delay(0.6)}
@@ -772,7 +779,7 @@ a{color:inherit}
 	}
 	@include device(sm){font-size:0.875em}
 	@include device(xs){position: static; margin-bottom: 1.5em; font-size:1em;
-		&.s--static{position: static}
+		&.s--static{position: static; background-color: transparent}
 	}
 }
 .c-menu__toggle{border:solid 2px $blue; height: 2.2em; width: 2.2em; position: relative;border-radius:3em; position: absolute; top:1em; right: 0.625em; display:none;

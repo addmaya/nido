@@ -93,7 +93,8 @@
 	remove_action('template_redirect', 'rest_output_link_header', 11, 0);
 
 	function time_ago(){
-		echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago';
+		echo get_the_date();
+		// echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' ago';
 	}
 
 	function get_post_thumb(){
