@@ -298,6 +298,7 @@ jQuery(document).ready(function($) {
 	  return FadeTransition;
 	};
 	
+	
 	//init
 	loadLazyImages();
 	scrollToHash();

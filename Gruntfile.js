@@ -20,9 +20,13 @@ module.exports = function(grunt) {
         },
         concat: {
         	js: {
-    	        src: ['js/jquery/jquery.min.js', 'js/vendors/*.js'],
+    	        src: ['js/dep/jquery.min.js', 'js/vendors/*.js'],
     	        dest: 'js/build/vendors.js',
-    	    }
+    	    },
+            maps: {
+                src: ['js/vendors/maps/googlemaps.js', 'js/vendors/maps/gmaps.js', 'js/vendors/maps/scripts.js'],
+                dest: 'js/build/maps.js',
+            }
         },
         uglify: {
             app: {
