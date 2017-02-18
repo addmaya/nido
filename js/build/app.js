@@ -119,6 +119,9 @@ jQuery(document).ready(function($) {
 	});
 	$('.js-show-contact').click(function() {
 		$('.o-contacts').addClass('u-white');
+	});
+	
+	$('.c-header .o-link').click(function() {
 		$('.c-header').removeClass('is-open');
 		$('.c-menu__toggle').removeClass('is-open');
 	});
@@ -141,15 +144,12 @@ jQuery(document).ready(function($) {
 		var me = $(this);
 		var t  = me.data('target');
 		var d = $('.js-'+t);
-		var h = $('.c-header');
+		// var h = $('.c-header');
 
 		if (t){
 			if(!(d.hasClass('is-active'))){
 				$('.c-menu').find('.is-active').removeClass('is-active');
 				d.addClass('is-active');
-			}
-			if(t == 'project'){
-				$('.c-line-2').hide();
 			}
 		}
 	});

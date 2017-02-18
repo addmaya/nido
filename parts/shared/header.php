@@ -76,7 +76,7 @@
 				<span class="o-angle">></span>
 				<span class="c-link-title">Let's Talk Business</span>
 			</a>
-			<a href="<?php echo home_url(); ?>/careers" class="o-link">
+			<a href="<?php echo home_url(); ?>/careers" class="o-link" data-target="profile">
 				<span class="o-angle">></span>
 				<span class="c-link-title">Careers</span>
 			</a>
