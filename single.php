@@ -43,9 +43,11 @@
 	</section>
 	<footer class="o-content__footer">
 		<div class="u-clear">
+			<?php $authors = get_field('asg_authors'); ?>
+			<?php if($authors) {?>
+			<h4 class="c-authors__title"><?php if(count($authors) > 1){echo 'Authors'; } else{echo 'Author';} ?></h4>
 			<div class="c-authors">
 			<?php
-				$authors = get_field('asg_authors');
 				foreach ($authors as $author) {
 					$writer = $author['asg_writer']; 
 					if($writer){
@@ -62,6 +64,7 @@
 				</div>	
 			<?php } wp_reset_postdata(); ?>
 			</div>
+			<?php } ?>
 			<div class="o-social">
 				<div class="u-wrap">
 					<span class="o-line"></span>

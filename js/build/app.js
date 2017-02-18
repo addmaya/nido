@@ -443,7 +443,7 @@ jQuery(document).ready(function($) {
         
         if($('#map').length){
             $.ajax({
-                url: asigma.ajaxurl,
+                url: ajaxurl,
                 dataType: 'json',
                 data: {action: 'get_plots'},
                 success: function(data){

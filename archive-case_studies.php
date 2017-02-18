@@ -26,14 +26,16 @@
 			<?php while ( have_posts() ) : the_post(); ?>
 			<li class="o-articles__list__item">
 				<article class="o-article">
-					<figure style="background-image:url('<?php get_post_thumb(); ?>')"></figure>
+					<a href="<?php the_permalink();?>">
+						<figure class="js-lazy" data-thumb="<?php get_post_thumb(); ?>" ></figure>
+					</a>
 					<section class="u-wrap">
 						<ul class="o-meta">
 							<li class="o-meta__item">
 								<time><?php time_ago(); ?></time>
 							</li>
 						</ul>
-						<h2><?php the_title(); ?></h2>
+						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<a data-target="insights" href="<?php esc_url( the_permalink() ); ?>" class="o-button">
 							<div class="o-button__dash"></div>
 							<span class="o-button__title">Read</span>

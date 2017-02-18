@@ -76,6 +76,10 @@
 				<span class="o-angle">></span>
 				<span class="c-link-title">Let's Talk Business</span>
 			</a>
+			<a href="<?php echo home_url(); ?>/careers" class="o-link">
+				<span class="o-angle">></span>
+				<span class="c-link-title">Careers</span>
+			</a>
 		</div>
 	</div>
 	<div class="o-contacts u-col-5 <?php if(is_page('contact')){echo 'u-white';} ?>">

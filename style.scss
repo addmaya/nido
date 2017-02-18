@@ -178,7 +178,7 @@ h4{font-size: 0.75em; font-family: $roboto; text-transform: uppercase; font-weig
 }
 p{line-height: 1.5}
 a{color:inherit}
-.o-menu{text-transform: uppercase; font-size:0.70em; color: $blue; padding:1em; @include prefix((transition:color 0.5s ease));
+.o-menu{text-transform: uppercase; font-size:0.75em; color: $blue; padding:1em; @include prefix((transition:color 0.5s ease));
 	div.o-page-thumb &{color: white}
 	&.inline{display:inline-block; padding:0}
 	.t-dark &{color:white}
@@ -763,6 +763,7 @@ a{color:inherit}
 .c-authors{float: left; width: 50%; @extend .u-clear;
 	@include device(xs){float:none; width:auto}
 }
+.c-authors__title{padding:0.625em; margin-bottom: 1.5em}
 .c-author{width: 50%; float: left; margin-bottom:1.5em;
 	figure{width:4.5em; height: 4.5em; background-color: $blue; margin-bottom: 1em; background-size:cover; background-repeat:no-repeat; background-position:center}
 	span{display: block}
