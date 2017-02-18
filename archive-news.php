@@ -16,9 +16,12 @@
 				<span class="o-line"></span>
 			</div>
 			<h1>Press</h1>
+			<?php $brief = get_field('press_intro', 534); ?>
+			<?php if($brief) {?>
 			<div class="o-content__header__brief">
-				<p><?php the_field('press_intro', 534); ?></p>
+				<p><?php echo $brief; ?></p>
 			</div>
+			<?php } ?>
 		</section>
 	</header>
 	<section class="o-articles">
