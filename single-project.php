@@ -93,7 +93,7 @@
 			<h4 class="u-wrap"><?php echo $title_3; ?></h4>
 			<section class="u-wrap u-clear">
 				<div class="u-half">
-					<p class="s--reset">Use the Interactive below map to select and reserve plots on the Mutundwe Hill Estate. Plots marked red are sold. On Mobile, use 2 fingers to navigate the Map</p>
+					<p class="s--reset"><?php the_field('interactive_map_description'); ?></p>
 				</div>
 			</section>			
 			<div class="c-map u-clear">
