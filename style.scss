@@ -611,7 +611,7 @@ a{color:inherit}
 // 	.t-dark &{display: none}
 // 	.t-contact &{z-index:0;}
 // }
-.c-grid__line{width: 1px; height: 100%; position: absolute; background-color: #000; z-index: 10; top: 0; opacity: 0.07; transition:background-color 0.5s ease; @include prefix((transform-origin:0% 0%));
+.c-grid__line{width: 1px; height: 100%; position: fixed; background-color: #000; z-index: 10; top: 0; opacity: 0.07; transition:background-color 0.5s ease; @include prefix((transform-origin:0% 0%));
 	.t-dark &{background-color: #6fa1ff; opacity: 0.2}
 	@include device(md){display:none;
 		.t-dark &{display: block}
