@@ -1,5 +1,4 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
-<span class="c-pg-title">insights</span>
 <div class="c-tint"></div>
 <div class="o-page-thumb">
 	<div class="u-table">
@@ -23,7 +22,7 @@
 	</header>
 	<section class="o-articles">
 		<ul class="o-articles__list">
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php while (have_posts()):the_post();?>
 			<li class="o-articles__list__item">
 				<article class="o-article">
 					<a href="<?php the_permalink();?>">
@@ -36,7 +35,7 @@
 							</li>
 						</ul>
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<a data-target="insights" href="<?php esc_url( the_permalink() ); ?>" class="o-button">
+						<a href="<?php the_permalink(); ?>" class="o-button">
 							<div class="o-button__dash"></div>
 							<span class="o-button__title">Read</span>
 							<div class="o-arrow">
@@ -49,7 +48,8 @@
 			</li>
 			<?php endwhile; ?>
 		</ul>
-		<?php if((wp_count_posts('case_study')->publish) > 6): ?>
+		
+		<?php if((wp_count_posts('insights')->publish) > 6): ?>
 		<div class="u-align-center u-mb">
 			<a href="#" class="o-button s--pull js-fetch-posts" data-type="insights">
 				<span></span>

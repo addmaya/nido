@@ -23,8 +23,10 @@
 			<h1><?php the_title(); ?></h1>
 		</section>
 	</header>
- 	<section class="c-standfirst">
- 		<?php if ($pointers): ?>
+	<?php if ($standfirst || $pointers): ?>
+		<section class="c-standfirst">
+			<h4>Summary</h4>
+ 		<?php if ($standfirst): ?>
  			<p><?php echo $standfirst; ?></p>
  		<?php endif ?>
  		<?php if ($pointers): ?>
@@ -38,6 +40,8 @@
  		<?php endif ?>
  		<span class="o-line"></span>
  	</section>
+	<?php endif ?>
+	
 	<section class="c-story">
 		<?php remove_editor_styles(); the_content(); ?>
 	</section>

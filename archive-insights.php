@@ -64,7 +64,6 @@
 			<span class="o-status">More Posts</span>
 		</div>
 		<?php endif; ?>
-
 	</section>
 </section>
 <div class="c-next s--footer">

@@ -379,7 +379,7 @@ a{color:inherit}
 		.t-contact &{margin-left:percentage(1/6)}
 		&.s--project{margin-left:0; width:auto}
 	}
-	@include device (xs){margin-left:0; padding-top:8em}
+	@include device (xs){margin-left:0; padding-top:8em; position:static}
 }
 .o-content__header{width:percentage(2/3); position: relative; padding-bottom: 2em;
 	h1{color: $blue;
@@ -464,7 +464,7 @@ a{color:inherit}
 	}
 	@include device(xs){
 		&.u-2-col{
-			.o-articles__list__item{width:auto}
+			.o-articles__list__item{width:100%}
 		}
 	}
 
@@ -474,7 +474,7 @@ a{color:inherit}
 		&::after{content:""; position: absolute; left:0; bottom:-6px; height: 1px; width: 30%; background-color: #d6d6d6}
 	}
 	@include device(sm){width:50%}
-	@include device(xs){width:auto; float:none; width:auto}
+	@include device(xs){width:100%; float:none}
 }
 .o-article{
 	>a{display: block; overflow: hidden;
@@ -661,7 +661,7 @@ a{color:inherit}
 	h1{color: $blue; padding:0.3em 0.3em 1em}
 	h2{font-size:1.3em; padding:0em 0.4em 1em; color:#8b8055;}
 	h3{font-size:0.875em; padding:2em 0.625em 1em; }
-	li{padding-bottom: 0.625em; font-family: 'Georgia', serif; font-style: italic}
+	li{padding-bottom: 0.625em; /*font-family: 'Georgia', serif; font-style: italic*/}
 	ul,ol{padding: 0 2em 2em; line-height:2; font-size:0.95em}
 	ul{list-style: circle outside}
 	ol{list-style: decimal outside}
@@ -669,7 +669,7 @@ a{color:inherit}
 		p{font-family:'Georgia'; font-style:italic; font-size:1.3em; color: $blue}
 		&:after{content:""; position: absolute; bottom:25%; width: 3%; height: 1px; background-color: $blue; left: 7%}
 	}
-	img{max-width:100%; height:auto; padding:1.5em 0;
+	img{max-width:100%; height:auto; padding:1.5em 0 0.375em;
 		&.size-full{width:100%;}
 	}
 	.o-list{padding:2em}
@@ -907,6 +907,7 @@ a{color:inherit}
 	.is-visible &{@include scaleInLeft; @include duration(3)}
 }
 .c-standfirst{padding-bottom:2.5em;
+	h4{color:#575b64; padding-left: 1.8em; padding-bottom:2em}
 	.o-list{padding:0 2em 2em; font-family:'Georgia', serif; font-style:italic;
 		li{padding-bottom:0.2em; color: #575b64}
 	}

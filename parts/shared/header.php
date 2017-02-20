@@ -80,6 +80,10 @@
 				<span class="o-angle">></span>
 				<span class="c-link-title">Careers</span>
 			</a>
+			<a href="<?php echo home_url(); ?>/press" class="o-link" data-target="insights">
+				<span class="o-angle">></span>
+				<span class="c-link-title">Press</span>
+			</a>
 		</div>
 	</div>
 	<div class="o-contacts u-col-5 <?php if(is_page('contact')){echo 'u-white';} ?>">
