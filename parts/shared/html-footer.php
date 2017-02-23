@@ -2,7 +2,6 @@
 	</div>
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/build/vendors.js"></script>
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/build/app.min.js"></script>
-	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/build/maps.js"></script>
 	<script>
 		var ajaxurl="<?php echo admin_url('admin-ajax.php'); ?>";
 		var posts_page = "<?php echo get_option( 'posts_per_page' ); ?>";

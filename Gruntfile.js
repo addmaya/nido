@@ -24,7 +24,7 @@ module.exports = function(grunt) {
     	        dest: 'js/build/vendors.js',
     	    },
             maps: {
-                src: ['js/vendors/maps/googlemaps.js', 'js/vendors/maps/gmaps.js', 'js/vendors/maps/scripts.js'],
+                src: ['js/vendors/dep/gmaps.js', 'js/vendors/dep/scripts.js'],
                 dest: 'js/build/maps.js',
             }
         },

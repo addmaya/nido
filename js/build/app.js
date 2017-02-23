@@ -1,5 +1,4 @@
-jQuery(document).ready(function($) {
-	
+jQuery(document).ready(function($) {	
 	if (navigator.appVersion.indexOf("Win")!=-1) {
 		$("html").addClass("is-pc");
 	}
@@ -27,7 +26,8 @@ jQuery(document).ready(function($) {
 		var articles_list = $('.o-articles__list');
 		
 		articles_list.isotope({
-			 itemSelector: '.o-articles__list__item'
+			 itemSelector: '.o-articles__list__item',
+			 layoutMode : 'fitRows'
 		});
 
 		$('.o-articles').on('click', '.js-fetch-posts', function(e) {

@@ -49,14 +49,14 @@
 			<?php endwhile; ?>
 		</ul>
 		
-		<?php if((wp_count_posts('insights')->publish) > 6): ?>
+		<?php if((wp_count_posts('case_studies')->publish) > 6): ?>
 		<div class="u-align-center u-mb">
 			<a href="#" class="o-button s--pull js-fetch-posts" data-type="insights">
 				<span></span>
 				<span></span>
 				<span></span>
 			</a>
-			<span class="o-status">More Posts</span>
+			<span class="o-status">More Case Studies</span>
 		</div>
 		<?php endif; ?>
 	</section>

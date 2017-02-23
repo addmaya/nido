@@ -650,7 +650,7 @@ a{color:inherit}
 	}
 }
 .c-story{color: #575b64;
-	p{margin-bottom: 2.5em; padding: 0 0.625em; font-size:0.95em; line-height:1.85;
+	p{margin-bottom: 2em; padding: 0 0.625em; font-size:0.95em; line-height:1.85;
 		a{color:#263f81; text-decoration: underline; 
 			&:hover{text-transform:none; opacity:0.6}
 		}
@@ -661,8 +661,10 @@ a{color:inherit}
 	h1{color: $blue; padding:0.3em 0.3em 1em}
 	h2{font-size:1.3em; padding:0em 0.4em 1em; color:#8b8055;}
 	h3{font-size:0.875em; padding:2em 0.625em 1em; }
-	li{padding-bottom: 0.625em; /*font-family: 'Georgia', serif; font-style: italic*/}
-	ul,ol{padding: 0 2em 2em; line-height:2; font-size:0.95em}
+	li{padding-bottom: 0.625em; line-height:1.7; /*font-family: 'Georgia', serif; font-style: italic*/}
+	ul,ol{padding:0 2.5em 1.5em; font-size:0.95em; position: relative; top:-1em;
+		>ul,ol{padding:0; line-height:1; font-size:1em; position:static}
+	}
 	ul{list-style: circle outside}
 	ol{list-style: decimal outside}
 	blockquote{padding:2em; position: relative;

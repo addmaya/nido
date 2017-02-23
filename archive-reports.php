@@ -35,7 +35,7 @@
 			<span></span>
 			<span></span>
 		</a>
-		<span class="o-status">More Posts</span>
+		<span class="o-status">More Reports</span>
 	</div>
 	<?php endif; ?>
 </section>
