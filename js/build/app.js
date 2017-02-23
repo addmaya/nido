@@ -686,7 +686,7 @@ jQuery(document).ready(function($) {
         }
         status = plot.sold === true ? 'Sold' : 'Available';
         
-        labelContent = '<div class="label-content" style="margin: 2em">';
+        labelContent = '<div class="label-content" >';
         labelContent += '<h6 class="c-plot__title">'+plot.name+'</h6>';
         labelContent += '<span>'+status+'</span>';
         labelContent += '<span>'+plot.area+' Decimals</span>';
