@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 
 	//fetch ajax posts
 	var p = parseInt(posts_page);
-	
+
     var selectedPlots = [];
     var plotColorNormal = '#BBD8E9';
     var soldPlotColor = '#FFCDD2';
@@ -686,7 +686,7 @@ jQuery(document).ready(function($) {
         }
         status = plot.sold === true ? 'Sold' : 'Available';
         
-        labelContent = '<div class="label-content">';
+        labelContent = '<div class="label-content" style="margin: 2em">';
         labelContent += '<h6 class="c-plot__title">'+plot.name+'</h6>';
         labelContent += '<span>'+status+'</span>';
         labelContent += '<span>'+plot.area+' Decimals</span>';
