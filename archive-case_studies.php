@@ -15,11 +15,13 @@
 				<span class="o-line"></span>
 			</div>
 			<h1><?php post_type_archive_title(); ?></h1>
-			<div class="o-content__header__brief">
+		</section>
+	</header>
+	<section class="c-brief">
+			<div class="u-wrap">
 				<p><?php the_field('case_studies_intro', 534); ?></p>
 			</div>
 		</section>
-	</header>
 	<section class="o-articles">
 		<ul class="o-articles__list">
 			<?php while (have_posts()):the_post();?>
