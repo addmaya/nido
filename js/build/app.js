@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
 
 	//fetch ajax posts
 	var p = parseInt(posts_page);
-    
+	
     var selectedPlots = [];
     var plotColorNormal = '#BBD8E9';
     var soldPlotColor = '#FFCDD2';

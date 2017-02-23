@@ -22,11 +22,7 @@ module.exports = function(grunt) {
         	js: {
     	        src: ['js/dep/jquery.min.js', 'js/vendors/*.js'],
     	        dest: 'js/build/vendors.js',
-    	    },
-            maps: {
-                src: ['js/vendors/dep/gmaps.js', 'js/vendors/dep/scripts.js'],
-                dest: 'js/build/maps.js',
-            }
+    	    }
         },
         uglify: {
             app: {
