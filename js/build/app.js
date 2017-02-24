@@ -34,9 +34,9 @@ jQuery(document).ready(function($) {
 			e.preventDefault();
 			var m = $(this);
 			var t = m.data('type');
-			var p = m.data('post');
+			var post = m.data('post');
 			var c = m.data('cat');
-			var status = 'No More '+p;
+			var status = 'No More '+post;
 		
 			$.ajax({
 	           url: ajaxurl,
