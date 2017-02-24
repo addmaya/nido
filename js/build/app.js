@@ -34,8 +34,9 @@ jQuery(document).ready(function($) {
 			e.preventDefault();
 			var m = $(this);
 			var t = m.data('type');
+			var p = m.data('post');
 			var c = m.data('cat');
-			var status = m.next('.o-status').html();
+			var status = 'No More '+p;
 		
 			$.ajax({
 	           url: ajaxurl,
@@ -55,7 +56,7 @@ jQuery(document).ready(function($) {
 	           			p = p + parseInt(posts_page);
 	           		}
 	           		else{
-	           			m.next('.o-status').html('No '+status);
+	           			m.next('.o-status').html(status);
 	           			
 	           			$('html, body').animate({scrollTop: 0}, 500);
 	           		}

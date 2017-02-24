@@ -53,7 +53,7 @@
 		
 		<?php if((wp_count_posts('case_studies')->publish) > 6): ?>
 		<div class="u-align-center u-mb">
-			<a href="#" class="o-button s--pull js-fetch-posts" data-type="case_studies">
+			<a href="#" class="o-button s--pull js-fetch-posts" data-post="Case Studies" data-type="case_studies">
 				<span></span>
 				<span></span>
 				<span></span>

@@ -56,7 +56,7 @@
 		
 		<?php if((wp_count_posts('insights')->publish) > 6): ?>
 		<div class="u-align-center u-mb">
-			<a href="#" class="o-button s--pull js-fetch-posts" data-type="insights">
+			<a href="#" class="o-button s--pull js-fetch-posts" data-post="Insights" data-type="insights">
 				<span></span>
 				<span></span>
 				<span></span>
