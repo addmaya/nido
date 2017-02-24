@@ -100,12 +100,12 @@
 		<?php 
 			if($cs_count > 6): ?>
 				<div class="u-align-center u-mb">
-					<a href="#" class="o-button s--pull js-fetch-posts" data-type="<?php echo $posts_type; ?>" data-cat="<?php $posts_cat; ?>">
+					<a href="#" class="o-button s--pull js-fetch-posts" data-post="Case Studies" data-type="<?php echo $posts_type; ?>" data-cat="<?php $posts_cat; ?>">
 						<span></span>
 						<span></span>
 						<span></span>
 					</a>
-					<span class="o-status">More Posts</span>
+					<span class="o-status">More Case Studies</span>
 				</div>
 		<?php endif; ?>
 	</section>
