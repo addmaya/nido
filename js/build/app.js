@@ -56,6 +56,7 @@ jQuery(document).ready(function($) {
 	           		}
 	           		else{
 	           			m.next('.o-status').html('No '+status);
+	           			
 	           			$('html, body').animate({scrollTop: 0}, 500);
 	           		}
 	           } 
