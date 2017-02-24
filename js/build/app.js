@@ -56,8 +56,7 @@ jQuery(document).ready(function($) {
 	           			p = p + parseInt(posts_page);
 	           		}
 	           		else{
-	           			m.next('.o-status').html(status);
-	           			
+	           			m.next('.o-status').html(status);	           			
 	           			$('html, body').animate({scrollTop: 0}, 500);
 	           		}
 	           } 
