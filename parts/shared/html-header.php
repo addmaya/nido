@@ -19,6 +19,10 @@
 		<meta property="og:title" content="<?php echo get_the_title(); ?>"/>
 		<meta property="og:description" content="<?php echo get_field('seo_description'); ?>" />
 		<meta property="og:image" content="<?php $seo_img = wp_get_attachment_image_url(get_post_thumbnail_id($post->ID), 'full'); if($seo_img){echo $seo_img;} else{echo get_stylesheet_directory_uri().'/images/data-wave.jpg';} ?>"/>
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcQOmynFmVAUA-OWS7ImsCkl9825ozutQ&libraries=geometry"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/maps/gmaps.js"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/maps/scripts.js"></script>
 		<?php wp_head(); ?>		
 	</head>
 	<body class="boot <?php if(is_front_page()){echo 't-dark';}?>">

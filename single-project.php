@@ -1,4 +1,5 @@
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
+
 <?php 
 	$title_1 = get_field('neigbourhood_title');
 	$title_2 = get_field('facilities_title');
@@ -198,7 +199,4 @@
 		</section>
 	</section>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcQOmynFmVAUA-OWS7ImsCkl9825ozutQ&libraries=geometry"></script>
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/maps/gmaps.js"></script>
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/maps/scripts.js"></script>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/footer','parts/shared/html-footer') ); ?>
