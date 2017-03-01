@@ -237,6 +237,31 @@ jQuery(document).ready(function($) {
 	});
 	home.init();
 
+	//profile
+	var profile = Barba.BaseView.extend({
+	  namespace: 'profile',
+	  onEnter: function() {
+	    $('.c-line-2').addClass('u-hide');
+	  },
+	  onLeave: function(){
+	  	$('.c-line-2').removeClass('u-hide');
+	  }
+	}); 
+	profile.init();
+
+	//career
+	var career = Barba.BaseView.extend({
+	  namespace: 'career',
+	  onEnter: function() {
+	    $('.c-line-3, .c-line-4').addClass('u-hide');
+	  },
+	  onLeave: function(){
+	  	$('.c-line-3, .c-line-4').removeClass('u-hide');
+	  }
+	}); 
+	career.init();
+
+
 	// contact
 	var contact = Barba.BaseView.extend({
 	  namespace: 'contact',

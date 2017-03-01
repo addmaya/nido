@@ -106,5 +106,7 @@
 		if (is_page('contact')){echo 'contact';}
 		if (is_singular('project')){echo 'project';}
 		if (is_front_page()){echo 'home';}
+		if (is_page('profile') || is_singular('staff') || is_page(('careers'))){echo 'profile';}
+		if (is_singular('career')){echo 'career';}
 		if (is_post_type_archive('insights')  || is_post_type_archive('case_studies') || is_post_type_archive('reports') || is_post_type_archive('news') || is_page('advisory') || is_page('data') || is_category()){echo 'posts';}
 	?>">

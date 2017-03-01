@@ -53,8 +53,8 @@
 					<?php wp_reset_postdata(); ?>
 				</ul>
 			</section>
-		<?php } {?>
-			<figure class="c-team__image"></figure>
+		<?php } else {?>
+			<figure class="c-team__image js-lazy" data-thumb="<?php echo get_post_thumb(); ?>"></figure>
 		<?php } ?>
 	</section>
 </div>

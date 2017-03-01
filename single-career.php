@@ -24,28 +24,24 @@
 	</header>
 	<section class="c-story">
 		<p><?php the_content(); ?></p>
-		<div class="o-list">
-			<h4>Key Responsibilities</h4>
-			<ul>
-				<?php
-					$job_r = get_field('responsibilities');
-					foreach ($job_r as $job) {
-						echo '<li>'.$job['responsibility'].'</li>';
-					}
-				?>
-			</ul>
-		</div>
-		<div class="o-list">
-			<h4>Qualifications</h4>
-			<ul>
-				<?php
-					$job_q = get_field('qualifications');
-					foreach ($job_q as $job) {
-						echo '<li>'.$job['qualification'].'</li>';
-					}
-				?>
-			</ul>
-		</div>
+		<h2>Essential Functions</h2>
+		<ul>
+			<?php
+				$job_r = get_field('responsibilities');
+				foreach ($job_r as $job) {
+					echo '<li>'.$job['responsibility'].'</li>';
+				}
+			?>
+		</ul>
+		<h2>Minimum Qualifications</h2>
+		<ul>
+			<?php
+				$job_q = get_field('qualifications');
+				foreach ($job_q as $job) {
+					echo '<li>'.$job['qualification'].'</li>';
+				}
+			?>
+		</ul>
 		<p>Sounds like you? Email us at <a href="mailto:join@asigmacapital.com">join@asigmacapital.com</a></p>
 	</section>
 	<footer class="o-content__footer">
