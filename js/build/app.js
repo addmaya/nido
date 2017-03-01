@@ -278,6 +278,7 @@ jQuery(document).ready(function($) {
 	contact.init();
 
 	//page-transitions
+	Barba.Pjax.cacheEnabled = false;
 	Barba.Pjax.start();
 	var FadeTransition = Barba.BaseTransition.extend({
 	  start: function() {
@@ -320,7 +321,6 @@ jQuery(document).ready(function($) {
 	    });
 	  }
 	});
-
 	Barba.Pjax.getTransition = function() {
 	  return FadeTransition;
 	};
