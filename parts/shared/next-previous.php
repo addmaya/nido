@@ -21,6 +21,10 @@
 			$pt_link = home_url().'/profile';
 			$pt_target = 'profile';
 			break;
+		case 'career':
+			$pt_link = home_url().'/careers';
+			$pt_target = 'profile';
+			break;
 		case 'reports':
 			$pt_link = home_url().'/reports';
 			$pt_target = 'insights';
