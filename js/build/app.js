@@ -728,7 +728,7 @@ jQuery(document).ready(function($) {
             raiseOnDrag: false,
             map: map,
             labelContent: labelContent,
-            labelAnchor: new google.maps.Point(150, 20),
+            labelAnchor: new google.maps.Point(240, 50),
             labelClass: "labels", // the CSS class for the label
             labelStyle: {opacity: 1.0},
             icon: "http://placehold.it/1x1",
