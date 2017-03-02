@@ -43,7 +43,7 @@
 	<?php endif ?>
 	
 	<section class="c-story">
-		<?php remove_editor_styles(); the_content(); ?>
+		<?php the_content(); ?>
 	</section>
 	<footer class="o-content__footer">
 		<div class="u-clear">

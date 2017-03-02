@@ -23,7 +23,7 @@
 		</section>
 	</header>
 	<section class="c-story">
-		<p><?php the_content(); ?></p>
+		<div><?php the_content(); ?></div>
 		<h2>Essential Functions</h2>
 		<ul>
 			<?php
