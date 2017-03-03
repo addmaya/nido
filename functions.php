@@ -242,6 +242,7 @@
 	  remove_menu_page( 'tools.php' );
 	}
 	add_action( 'admin_menu', 'remove_menus' );
+	
 
 	add_action( 'admin_init', 'wpse_136058_remove_menu_pages' );
 	function wpse_136058_remove_menu_pages() {
