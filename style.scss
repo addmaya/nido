@@ -858,11 +858,18 @@ a{color:inherit}
 		h3{@include anim; @include fadeInLeft; @include delay(0.2)}
 		h2{@include anim; @include fadeInLeft; @include delay(1)}
 		.o-button{@include anim; @include fadeInLeft; @include delay(1.5)}
+		@include device(xs){
+			h3{@include delay(0.1)}
+			h2{@include delay(0.2)}
+			.o-button{@include delay(0.3)}
+		}
 	}
 	h2 a{transition:opacity 0.5s ease;
 		&:hover{opacity:0.7}
 	}
-	.swiper-wrapper{@include prefix((transition-timing-function: cubic-bezier(0.63, -0.01, 0.15, 1)))}
+	.swiper-wrapper{@include prefix((transition-timing-function: cubic-bezier(0.63, -0.01, 0.15, 1)));
+		@include device(xs){@include prefix((transition-timing-function:linear))}
+	}
 	.swiper-button-prev, .swiper-button-next{background-size: contain; background-repeat:no-repeat; width: 2.5em; height: 2.5em; bottom:5%; display: none; top: auto;
 		.boot &{@include anim; @include fadeIn; @include delay(0.5)}
 		@include device(xs){display: block}

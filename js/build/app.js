@@ -182,14 +182,19 @@ jQuery(document).ready(function($) {
 	project.init();
 
 	//home
+	var slider_speed = 1200;
+	if(Modernizr.mq('(max-width: 767px)')){
+		slider_speed = 300;
+	}
 	var home = Barba.BaseView.extend({
 	  namespace: 'home',
 	  onEnter: function() {
 	  	$('html').addClass('u-height');
 	  	$('body').addClass('t-dark');
+
 	    var splashSwiper = new Swiper('.c-slider__wrap', {
 	    	loop: true,
-	    	speed: 1200,
+	    	speed: slider_speed,
 	    	pagination: '.swiper-pagination',
 	    	nextButton: '.swiper-button-next',
 	    	prevButton: '.swiper-button-prev',

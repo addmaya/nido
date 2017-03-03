@@ -230,8 +230,6 @@
 	function remove_menus(){
 	  global $menu;
 	  global $submenu;
-
-    if (!current_user_can('manage_options')) {
 	  remove_menu_page( 'index.php' );                 
 	  remove_menu_page( 'jetpack' ); 
 	  remove_menu_page( 'edit.php' ); 
@@ -241,12 +239,20 @@
 	  remove_menu_page( 'themes.php' );                
 	  remove_menu_page( 'plugins.php' );         
 	  remove_menu_page( 'users.php' );                
-	  remove_menu_page( 'tools.php' );                  
-	  remove_menu_page( 'options-general.php' );   
-	  }    
-	  
+	  remove_menu_page( 'tools.php' );
 	}
 	add_action( 'admin_menu', 'remove_menus' );
+
+	add_action( 'admin_init', 'wpse_136058_remove_menu_pages' );
+	function wpse_136058_remove_menu_pages() {
+	    remove_menu_page('edit.php?post_type=acf');
+	    remove_menu_page('cptui_main_menu');
+	}
+
+	//add_action( 'admin_init', 'wpse_136058_debug_admin_menu' );
+	// function wpse_136058_debug_admin_menu() {
+	//     echo '<pre>' . print_r( $GLOBALS[ 'menu' ], TRUE) . '</pre>';
+	// }
 
 	function admin_default_page() {
 	  return 'wp-admin/edit.php?post_type=insights';
