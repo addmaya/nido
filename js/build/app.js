@@ -191,6 +191,8 @@ jQuery(document).ready(function($) {
 	  onEnter: function() {
 	  	$('html').addClass('u-height');
 	  	$('body').addClass('t-dark');
+	  	$('body').addClass('u-oh');
+	  	
 
 	    var splashSwiper = new Swiper('.c-slider__wrap', {
 	    	loop: true,
@@ -238,6 +240,7 @@ jQuery(document).ready(function($) {
 	  onLeave: function(){
 	  	$('html').addClass('u-height');
 	  	$('body').removeClass('t-dark');
+	  	$('body').removeClass('u-oh');
 	  }
 	});
 	home.init();
