@@ -27,7 +27,7 @@
 		<section class="c-standfirst">
 			<h4>Summary</h4>
  		<?php if ($standfirst): ?>
- 			<div><?php echo $standfirst; ?></div>
+ 			<p><?php echo $standfirst; ?></p>
  		<?php endif ?>
  		<?php if ($pointers): ?>
 	 		<div class="o-list">
