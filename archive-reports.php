@@ -21,13 +21,15 @@
 			</div>
 		</section>
 	</header>
-	<section class="o-articles s--tint">
-		<ul class="o-articles__list">
-			<?php while ( have_posts() ) : the_post(); ?>
-			<?php echo get_file(); ?>
-			<?php endwhile; ?>
-		</ul>
-	</section>
+	<?php if ( have_posts() ): ?>
+		<section class="o-articles s--tint">
+			<ul class="o-articles__list">
+				<?php while ( have_posts() ) : the_post(); ?>
+				<?php echo get_file(); ?>
+				<?php endwhile; ?>
+			</ul>
+		</section>
+	<?php endif ?>
 	<?php if((wp_count_posts('report')->publish) > 6): ?>
 	<div class="u-align-center u-mb">
 		<a href="#" class="o-button s--pull js-fetch-posts" data-type="report">
@@ -41,7 +43,7 @@
 </section>
 <div class="c-next s--footer">
 	<div class="u-wrap">
-		<span class="o-subtitle u-mb">Next</span>
+		<span class="o-subtitle u-mb"><a data-target="insights"href="<?php echo home_url(); ?>/press">Next</a></span>
 		<h2><a data-target="insights"href="<?php echo home_url(); ?>/press">Press</a></h2>
 		<div class="o-pager">
 			<a data-target="insights" href="<?php echo home_url(); ?>/press" class="o-pager--next last">

@@ -40,7 +40,7 @@
 <?php if (!empty($pt_prev)){ ?>
 	<div class="c-next">
 		<div class="u-wrap">
-	  		<span class="o-subtitle">Next</span>
+	  		<span class="o-subtitle"><a href="<?php echo get_permalink( $pt_prev->ID ); ?>">Next</a></span>
 	  		<h2><a href="<?php echo get_permalink( $pt_prev->ID ); ?>"><?php echo $pt_prev->post_title; ?></a></h2>
 	  		<div class="o-pager">
 	  			<a href="<?php echo get_permalink( $pt_prev->ID ); ?>" class="o-pager--next last">

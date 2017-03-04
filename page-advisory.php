@@ -113,7 +113,7 @@
 </section>
 <div class="c-next s--footer">
 	<div class="u-wrap">
-		<span class="o-subtitle u-mb">Next</span>
+		<span class="o-subtitle u-mb"><a data-target="capital-management" href="<?php echo home_url(); ?>/capital-management">Next</a></span>
 		<h2><a data-target="capital-management" href="<?php echo home_url(); ?>/capital-management">Capital Management</a></h2>
 		<div class="o-pager">
 			<a data-target="capital-management" href="<?php echo home_url(); ?>/capital-management" class="o-pager--next last">

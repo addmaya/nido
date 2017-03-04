@@ -147,7 +147,7 @@
 </section>
 <div class="c-next s--footer">
 	<div class="u-wrap">
-		<span class="o-subtitle u-mb">Next</span>
+		<span class="o-subtitle u-mb"><a data-target="insights" href="<?php echo home_url(); ?>/insights">Next</a></span>
 		<h2><a data-target="insights" href="<?php echo home_url(); ?>/insights">Market Insights</a></h2>
 		<div class="o-pager">
 			<a data-target="insights" href="<?php echo home_url(); ?>/insights" class="o-pager--next last">

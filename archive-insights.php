@@ -68,7 +68,7 @@
 </section>
 <div class="c-next s--footer">
 	<div class="u-wrap">
-		<span class="o-subtitle u-mb">Next</span>
+		<span class="o-subtitle u-mb"><a data-target="project" href="<?php echo home_url(); ?>/project/mutundwe-hill-estate/">Next</a></span>
 		<h2><a data-target="project" href="<?php echo home_url(); ?>/project/mutundwe-hill-estate/">Real Estate</a></h2>
 		<div class="o-pager">
 			<a data-target="project" href="<?php echo home_url(); ?>/project/mutundwe-hill-estate/" class="o-pager--next last">

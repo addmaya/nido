@@ -6,7 +6,7 @@
 	<figure class="js-lazy" data-thumb="<?php get_post_thumb(); ?>"></figure>
 </div>
 <?php 
-	$standfirst = get_field('asg_summary');
+	$standfirst = get_field('asg_summary', false, false);
 	$pointers = get_field('asg_pointers');
  ?>
 <section class="o-content s--story">

@@ -76,7 +76,7 @@
 </div>
 <div class="c-next s--footer">
 	<div class="u-wrap">
-		<span class="o-subtitle u-mb">Next</span>
+		<span class="o-subtitle u-mb"><a data-target="advisory" href="<?php echo home_url();?>/advisory">Next</a></span>
 		<h2><a data-target="advisory" href="<?php echo home_url();?>/advisory">Advisory Services</a></h2>
 		<div class="o-pager">
 			<a data-target="advisory" href="<?php echo home_url();?>/advisory" class="o-pager--next last">
