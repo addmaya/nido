@@ -8,6 +8,8 @@
 	}
 	add_action('content_save_pre', 'remove_empty_lines');
 
+	remove_filter ('acf_the_content', 'wpautop');
+
 
 	function form_submit(){
 		if ((!strstr($_POST['txt_message'], 'http://')) && isset($_POST['form_spam_key']) && $_POST['form_spam_key']==''){
