@@ -69,6 +69,11 @@
 				</div>
 			</div>
 		</header>
+		<section class="c-brief">
+			<div class="u-wrap">
+				<p><?php the_field('case_studies_intro', 534); ?></p>
+			</div>
+		</section>
 		<ul class="o-articles__list">
 		<?php while ( $cs->have_posts() ) : $cs->the_post(); ?>
 			<li class="o-articles__list__item">

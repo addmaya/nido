@@ -18,10 +18,10 @@
 		</section>
 	</header>
 	<section class="c-brief">
-			<div class="u-wrap">
-				<p><?php the_field('case_studies_intro', 534); ?></p>
-			</div>
-		</section>
+		<div class="u-wrap">
+			<p><?php the_field('case_studies_intro', 534); ?></p>
+		</div>
+	</section>
 	<section class="o-articles">
 		<ul class="o-articles__list">
 			<?php while (have_posts()):the_post();?>
