@@ -6,7 +6,7 @@
 	<figure class="js-lazy" data-thumb="<?php get_post_thumb(); ?>"></figure>
 </div>
 <?php 
-	$standfirst = get_field('asg_summary', false, false);
+	$standfirst = get_field('asg_summary');
 	$pointers = get_field('asg_pointers');
  ?>
 <section class="o-content s--story">
@@ -27,7 +27,7 @@
 		<section class="c-standfirst">
 			<h4>Summary</h4>
  		<?php if ($standfirst): ?>
- 			<p><?php echo $standfirst; ?></p>
+ 			<section><?php echo $standfirst; ?></section>
  		<?php endif ?>
  		<?php if ($pointers): ?>
 	 		<div class="o-list">
