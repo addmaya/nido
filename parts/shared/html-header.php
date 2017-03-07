@@ -23,6 +23,9 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcQOmynFmVAUA-OWS7ImsCkl9825ozutQ&libraries=geometry"></script>
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/maps/gmaps.js"></script>
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/maps/scripts.js"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/build/vendors.js?v0.196"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/build/app.min.js?v0.196"></script>
+		
 		<?php wp_head(); ?>		
 	</head>
 	<body class="boot <?php if(is_front_page()){echo 't-dark';}?>">
