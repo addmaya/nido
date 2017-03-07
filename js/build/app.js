@@ -868,7 +868,6 @@ jQuery(document).ready(function($) {
         }
         return bounds.getCenter();
     }
-   plotPrices = array();
     
     function getApproxPlotPrice(plot){
         price = 0;
