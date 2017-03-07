@@ -868,24 +868,25 @@ jQuery(document).ready(function($) {
         }
         return bounds.getCenter();
     }
+   plotPrices = array();
     
     function getApproxPlotPrice(plot){
         price = 0;
         switch(plot.area){
             case 12:
-                price = 'UGX 37,000,000';
+                price = $('#plot-12 span').html();
                 break;
             case 13:
-                price = 'UGX 43,333,300';
+                price = $('#plot-13 span').html();
                 break;
             case 15:
-                price = 'UGX 50,000,000';
+                price = $('#plot-15 span').html();
                 break;
             case 19:
-                price = 'UGX 63,333,300';
+                price = $('#plot-19 span').html();
                 break;
             case 20:
-                price = 'UGX 66,666,600';
+                price = 'Contact Asigma Capital';
                 break;
         }
         return price;

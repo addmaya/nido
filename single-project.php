@@ -147,8 +147,15 @@
 							<li><span>Plot Size</span></li>
 							<li><span>Price (Ugx)</span></li>
 						</ul>
-						<?php $prices = get_field('mhe_prices'); ?>
-						<?php foreach ($prices as $price): ?>
+						<?php
+							$prices = get_field('mhe_prices');
+							$plotsList = array();
+						?>
+						<?php foreach ($prices as $price): 
+
+						?>	<div class="u-hide" id="plot-<?php echo substr($price['mhe_plot_size'], 0, 2); ?>">
+								<span>UGX <?php echo $price['mhe_plot_amount']; ?></span>
+							</div>
 							<ul class="u-tr">
 								<li><span><?php echo $price['mhe_plot_size']; ?></span></li>
 								<li><span><?php echo $price['mhe_plot_amount']; ?></span></li>
