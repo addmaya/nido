@@ -872,6 +872,9 @@ jQuery(document).ready(function($) {
     function getApproxPlotPrice(plot){
         price = 0;
         switch(plot.area){
+            case 11:
+                price = $('#plot-11 span').html();
+                break;
             case 12:
                 price = $('#plot-12 span').html();
                 break;
@@ -885,7 +888,10 @@ jQuery(document).ready(function($) {
                 price = $('#plot-19 span').html();
                 break;
             case 20:
-                price = 'Contact Asigma Capital';
+                price = $('#plot-20 span').html();
+                break;
+            case 22:
+                price = $('#plot-22 span').html();
                 break;
         }
         return price;
