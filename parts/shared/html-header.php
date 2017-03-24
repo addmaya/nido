@@ -24,8 +24,8 @@
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/maps/gmaps.js"></script>
 		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/maps/scripts.js"></script>
 
-		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/build/vendors.js?v0.196"></script>
-		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/build/app.min.js?v0.196"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/build/vendors.js?v1.001"></script>
+		<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/build/app.min.js?v1.001"></script>
 		
 		<?php wp_head(); ?>		
 	</head>
