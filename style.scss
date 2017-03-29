@@ -553,8 +553,8 @@ a{color:inherit}
 	a{color:$blue}
 }
 .o-status{text-transform: uppercase; font-size:0.75em; display: block; padding:1.5em 0; color: $blue}
-.o-partner{float: left; width:percentage(1/4); margin-bottom: 12px; overflow: hidden;
-	figure{background-color: $blue; height: 10em; margin-right: 0.625em;overflow: hidden;
+.o-partner{float: left; width:percentage(1/3); margin-bottom: 12px; overflow: hidden;
+	figure{background-color: $blue; height: 10em; overflow: hidden;
 		.boot &{@include anim; @include fadeInLeft}
 	}
 	@for $i from 1 through 6 {
@@ -763,11 +763,11 @@ a{color:inherit}
 .c-partners__logo{background-color:white; background-size:60%; background-repeat:no-repeat; background-position:center; height:100%; width: 100%; display:block; @include prefix((transition: transform 0.5s ease));
 	&:hover{@include prefix((transform: translateX(10%)))}
 }
-.c-authors{float: left; width: 50%; @extend .u-clear;
+.c-authors{float: left; width: 70%; @extend .u-clear;
 	@include device(xs){float:none; width:auto}
 }
 .c-authors__title{padding:0.625em; margin-bottom: 1.5em}
-.c-author{width: 50%; float: left; margin-bottom:1.5em;
+.c-author{float: left; margin-bottom:1.5em; display: inline-block;
 	figure{width:4.5em; height: 4.5em; background-color: $blue; margin-bottom: 1em; background-size:cover; background-repeat:no-repeat; background-position:center}
 	span{display: block}
 	@include device(xs){padding-left:0.625em; padding-bottom:0.5em; width: 40%}

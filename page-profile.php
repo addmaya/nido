@@ -47,7 +47,7 @@
 			<?php wp_reset_postdata(); ?>
 		</ul>
 		<div class="u-wrap">
-			<h4 class="u-align-right">Operations</h4>
+			<h4 class="u-align-right">Core Team</h4>
 		</div>
 		<?php endif; ?>
 		<ul class="u-yang__list">
