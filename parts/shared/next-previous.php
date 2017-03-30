@@ -21,6 +21,10 @@
 			$pt_link = home_url().'/profile';
 			$pt_target = 'profile';
 			break;
+		case 'board':
+			$pt_link = home_url().'/profile';
+			$pt_target = 'profile';
+			break;
 		case 'career':
 			$pt_link = home_url().'/careers';
 			$pt_target = 'profile';
@@ -53,10 +57,10 @@
 	  		</div>
 	  	</div>
 	 </div>
-<?php } else {?>
+<?php } else { ?>
 	<div class="c-next new">
 		<div class="u-wrap">
-	  		<h2><a data-target="<?php echo $pt_target; ?>" href="<?php echo $pt_link; ?>">All <?php echo $pt_plural; ?></a></h2>
+	  		<h2><a data-target="<?php echo $pt_target; ?>" href="<?php echo $pt_link; ?>"><?php if($pt_active != 'board'){echo 'All '.$pt_plural;}else{echo 'Asigma Profile';} ?></a></h2>
 	  		<div class="o-pager">
 	  			<a data-target="<?php echo $pt_target; ?>" href="<?php echo $pt_link; ?>" class="o-pager--next last">
 	  				<span class="o-circle"></span>

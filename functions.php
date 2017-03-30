@@ -265,7 +265,7 @@
 	}
 	add_action( 'wp_footer', 'my_deregister_scripts' );
 
-	add_filter('wp_handle_upload_prefilter','mdu_validate_image_size');
+	//add_filter('wp_handle_upload_prefilter','mdu_validate_image_size');
 	function mdu_validate_image_size( $file ) {
 	    $image = getimagesize($file['tmp_name']);
 	    if(in_array($file['type'], array('image/png', 'image/gif', 'image/jpeg', 'image/jpg'))){
