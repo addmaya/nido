@@ -566,6 +566,10 @@ a{color:inherit}
 	}
 	@include device(xs){width:100%}
 }
+.o-partner__logo{background-color:transparent; background-size:70%; background-repeat:no-repeat; background-position:center; height:100%; width: 100%; display:block; @include prefix((transition: transform 0.5s ease));
+	&:hover{@include prefix((transform: translateX(10%)))}
+}
+
 .o-button--video{width: 5em; height: 5em; display: inline-block; background-position: center; background-repeat: no-repeat; @include image('btn-play.svg'); background-size: contain; @include prefix((transition: opacity 0.5s ease));
 	&:hover{opacity: 0.6}
 }
@@ -760,9 +764,7 @@ a{color:inherit}
 	@include device(xs){display:none}
 }
 .c-partners__list{margin-bottom:3em; @extend .u-clear}
-.c-partners__logo{background-color:transparent; background-size:85%; background-repeat:no-repeat; background-position:center; height:100%; width: 100%; display:block; @include prefix((transition: transform 0.5s ease));
-	&:hover{@include prefix((transform: translateX(10%)))}
-}
+
 
 .c-authors{float: left; width: 70%; @extend .u-clear;
 	@include device(xs){float:none; width:auto}

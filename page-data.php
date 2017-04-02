@@ -76,7 +76,7 @@
 			?>
 				<li class="o-partner">
 					<figure>
-						<a target="_blank" href="<?php echo $partner_link; ?>" class="c-partners__logo js-lazy" data-thumb="<?php echo $partner_logo; ?>"></a>
+						<a target="_blank" href="<?php echo $partner_link; ?>" class="o-partner__logo js-lazy" data-thumb="<?php echo $partner_logo; ?>"></a>
 					</figure>
 				</li>
 			<?php endforeach ?>
