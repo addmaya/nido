@@ -755,8 +755,15 @@ jQuery(document).ready(function($) {
         
         plot.center = getPolygonCenter(path);
         plot.polygon = poly;
+        
+        google.maps.event.addListener(poly, "click", function(event) {
+            console.log('Clicked');
+            this.getMap().setZoom(18);
+            this.getMap().setCenter(event.latLng);
+            plotClicked(plot, poly);
+        });
     
-        google.maps.event.addListener(poly, "mousemove", function(event) {
+        google.maps.event.addListener(poly, "mouseover", function(event) {
             marker.setPosition(event.latLng);
             marker.setVisible(true);
             
@@ -784,12 +791,6 @@ jQuery(document).ready(function($) {
                     fillColor: plotColor
                 });        
             }
-        });
-        
-        google.maps.event.addListener(poly, "click", function(event) {
-            this.getMap().setZoom(18);
-            this.getMap().setCenter(event.latLng);
-            plotClicked(plot, poly);
         });
     }
     
